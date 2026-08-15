@@ -1,0 +1,77 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="I-M-S.Master.cs" Inherits="Invantory_Management_System.Invantory" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Invantory</title>
+    <link href="IMS.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+
+<form id="form1" runat="server">
+
+<div class="sidebar">
+
+    <div class="logo">
+        INVENTORY<br />
+        MANAGEMENT
+    </div>
+
+    <a href="InHome.aspx">🏠 Home</a>
+
+    <a href="NewSupplier.aspx">👤 New Supplier</a>
+
+    <a href="SearchSupplier.aspx">🔍 Search Supplier</a>
+
+    <a href="AllSupplier.aspx">📋 All Supplier</a>
+
+    <a href="NewCustomer.aspx">👤 New Customer</a>
+
+    <a href="SearchCustomer.aspx">🔍 Search Customer</a>
+
+    <a href="AllCustomer.aspx">📋 All Customer</a>
+
+    <a href="Purchase.aspx">🛒 Purchase</a>
+
+    <a href="Sell.aspx">💰 Sell</a>
+
+    <a href="AllStock.aspx">📦 Stock</a>
+
+    <a href="Bills.aspx">🧾 Bill</a>
+
+    <div class="logout">
+        <a href="logout.aspx">🚪 Logout</a>
+    </div>
+
+</div>
+
+<div class="main">
+
+    <div class="header">
+
+        <div class="system-name">
+            INVENTORY MANAGEMENT SYSTEM
+        </div>
+
+        <div class="admin">
+            Welcome, Admin
+        </div>
+
+    </div>
+
+    <div class="content">
+
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+
+    </div>
+
+</div>
+
+</form>
+
+</body>
+</html>
