@@ -21,18 +21,31 @@ namespace Invantory_Management_System
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            string s = "select * from login where logid='" + TextBox1.Text + "'and logpass='" + TextBox2.Text + "'";
-
-            da = new SqlDataAdapter(s, con);
-            DataSet ds = new DataSet();
-            da.Fill(ds);
-
-            if (ds.Tables[0].Rows.Count > 0)
+            string type = Request.QueryString["type"];
+            if(type =="Admin")
             {
-                Response.Write("<script>alert('Admin Login Successfully');</script>");
-                Response.Redirect("InHome.aspx");
+                string s = "select * from login where logid='" + TextBox1.Text + "'and logpass='" + TextBox2.Text + "'";
+
+                da = new SqlDataAdapter(s, con);
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    Response.Write("<script>alert('Admin Login Successfully');</script>");
+                    Response.Redirect("InHome.aspx");
+                }
+                else
+                {
+                    Response.Write("<script>alert('Invalid ID Or Password');</script>");
+                    TextBox1.Text = "";
+                    TextBox2.Text = "";
+
+                    TextBox1.Focus();
+                }
             }
-            else
+            
+            else if(type == "Supplier")
             {
                 string s1 = "select * from supplier where userid='" + TextBox1.Text + "'and password='" + TextBox2.Text + "'";
                 da = new SqlDataAdapter(s1, con);

@@ -85,6 +85,8 @@
     <Content Include="Login.css" />
     <Content Include="logout.aspx" />
     <Content Include="Logut.css" />
+    <Content Include="Main_Dashboard.aspx" />
+    <Content Include="Main_Dashboard.css" />
     <Content Include="NewCustomer.aspx" />
     <Content Include="NewSupplier.aspx" />
     <Content Include="Purchase.aspx" />
@@ -202,6 +204,13 @@
     </Compile>
     <Compile Include="logout.aspx.designer.cs">
       <DependentUpon>logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Main_Dashboard.aspx.cs">
+      <DependentUpon>Main_Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Main_Dashboard.aspx.designer.cs">
+      <DependentUpon>Main_Dashboard.aspx</DependentUpon>
     </Compile>
     <Compile Include="NewCustomer.aspx.cs">
       <DependentUpon>NewCustomer.aspx</DependentUpon>
