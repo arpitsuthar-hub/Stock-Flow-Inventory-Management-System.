@@ -60,25 +60,11 @@ namespace Invantory_Management_System
                 }
                 else
                 {
-                    string s2 = "select * from customer where userid='" + TextBox1.Text + "' and password='" + TextBox2.Text + "'";
-                    da=new SqlDataAdapter(s2, con);
-                    DataSet ds2=new DataSet();
-                    da.Fill(ds2);
+                    Response.Write("<script>alert('Invalid ID Or Password');</script>");
+                    TextBox1.Text = "";
+                    TextBox2.Text = "";
 
-                    if(ds2.Tables[0].Rows.Count > 0)
-                    {
-                        Session["cid"] = ds2.Tables[0].Rows[0]["cid"].ToString();
-                        Response.Write("<script>alert('Customer Login Successfully');</script>");
-                        Response.Redirect("CustomerProfile.aspx?cid=" + Session["cid"]);
-                    }
-                    else
-                    {
-                        Response.Write("<script>alert('Invalid ID Or Password');</script>");
-                        TextBox1.Text = "";
-                        TextBox2.Text = "";
-
-                        TextBox1.Focus();
-                    }
+                    TextBox1.Focus();
                 }
             }
         }

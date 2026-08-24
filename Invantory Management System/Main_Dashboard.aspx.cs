@@ -7,11 +7,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace Invantory_Management_System
-{
-    public partial class Main_Dashboard : System.Web.UI.Page
-    {
-        SqlConnection con = new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Invantory;Integrated Security=True");
-        SqlDataAdapter da;
+{ public partial class Main_Dashboard : System.Web.UI.Page
+    {   
+        SqlConnection con = new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Invantory;Integrated Security=True");        
         protected void Page_Load(object sender, EventArgs e)
         {
             con.Open();
