@@ -1,9 +1,10 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Stock Module/Stock_Module.Master"
-AutoEventWireup="true"
-CodeBehind="Stock_Dashboard.aspx.cs"
-Inherits="Inventory_Management_System.Stock_Module.Stock_Dashboard" %>
+<%@ Page Title="" Language="C#" MasterPageFile="~/Stock Module/Stock_Module.Master"
+    AutoEventWireup="true"
+    CodeBehind="Stock_Dashboard.aspx.cs"
+    Inherits="Inventory_Management_System.Stock_Module.Stock_Dashboard" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+
 <style>
 
     /* =========================================
@@ -70,75 +71,80 @@ Inherits="Inventory_Management_System.Stock_Module.Stock_Dashboard" %>
 
 
     /* =========================================
-   STATISTICS
-========================================= */
+       STATISTICS
+    ========================================= */
 
-.stats-container {
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
+    .stats-container {
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
 
-    gap: 22px;
+        gap: 22px;
 
-    margin-bottom: 25px;
-    width: 100%;
-}
+        margin-bottom: 25px;
+        width: 100%;
+    }
 
-.stat-card {
-    width: 280px;
+    .stat-card {
+        width: 100%;
+        min-height: 135px;
 
-    background: white;
+        background: white;
 
-    border: 1px solid #e5e7eb;
+        border: 1px solid #e5e7eb;
 
-    border-radius: 12px;
+        border-radius: 12px;
 
-    padding: 22px;
+        padding: 28px 30px;
 
-    display: flex;
+        display: flex;
 
-    align-items: center;
+        align-items: center;
 
-    justify-content: center;
+        justify-content: flex-start;
 
-    gap: 16px;
+        gap: 20px;
 
-    text-align: center;
-}
+        text-align: left;
 
-.stat-icon {
-    width: 48px;
-    height: 48px;
+        flex: 1;
+    }
 
-    border-radius: 10px;
+    .stat-icon {
+        width: 58px;
+        height: 58px;
 
-    background: #f1f5f9;
+        min-width: 58px;
 
-    display: flex;
+        border-radius: 10px;
 
-    align-items: center;
-    justify-content: center;
+        background: #f1f5f9;
 
-    font-size: 22px;
-}
+        display: flex;
 
-.stat-card span {
-    display: block;
+        align-items: center;
+        justify-content: center;
 
-    color: #718096;
+        font-size: 25px;
+    }
 
-    font-size: 13px;
+    .stat-card span {
+        display: block;
 
-    margin-bottom: 5px;
-}
+        color: #718096;
 
-.stat-card h2 {
-    margin: 0;
+        font-size: 14px;
 
-    font-size: 25px;
+        margin-bottom: 6px;
+    }
 
-    color: #14213d;
-}
+    .stat-card h2 {
+        margin: 0;
+
+        font-size: 30px;
+
+        color: #14213d;
+    }
 
 
     /* =========================================
@@ -283,221 +289,371 @@ Inherits="Inventory_Management_System.Stock_Module.Stock_Dashboard" %>
     }
 
 
+    /* =========================================
+       RESPONSIVE
+    ========================================= */
+
     @media (max-width: 900px) {
 
-    .stats-container {
-        flex-wrap: wrap;
-        justify-content: center;
+        .stats-container {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .stat-card {
+            flex: 1 1 45%;
+        }
+
+        .dashboard-grid {
+            grid-template-columns: 1fr;
+        }
     }
 
-    .dashboard-grid {
-        grid-template-columns: 1fr;
-    }
-}
 
-@media (max-width: 600px) {
+    @media (max-width: 600px) {
 
-    .dashboard {
-        padding: 20px;
-    }
+        .dashboard {
+            padding: 20px;
+        }
 
-    .dashboard-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 15px;
-    }
+        .dashboard-header {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 15px;
+        }
 
-    .stats-container {
-        flex-direction: column;
-        align-items: center;
-    }
+        .stats-container {
+            flex-direction: column;
+            align-items: center;
+        }
 
-    .stat-card {
-        width: 100%;
-        max-width: 320px;
-    }
+        .stat-card {
+            width: 100%;
+            max-width: none;
+            min-height: 120px;
+        }
 
-    .stock-overview {
-        grid-template-columns: 1fr;
-    }
+        .stock-overview {
+            grid-template-columns: 1fr;
+        }
 
-    .welcome-card {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 15px;
+        .welcome-card {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 15px;
+        }
     }
-}
 
 </style>
+
 </asp:Content>
+
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
 <div class="dashboard">
 
+
     <!-- Header -->
+
     <div class="dashboard-header">
 
         <div>
+
             <h1>Stock Management</h1>
-            <p>Monitor and manage your inventory stock.</p>
+
+            <p>
+                Monitor and manage your inventory stock.
+            </p>
+
         </div>
+
 
         <div class="date-box">
+
             <span>Today</span>
-            <strong><%= DateTime.Now.ToString("dd MMM yyyy") %></strong>
+
+            <strong>
+                <%= DateTime.Now.ToString("dd MMM yyyy") %>
+            </strong>
+
         </div>
 
     </div>
+
 
 
     <!-- Statistics -->
-    <!-- Statistics -->
-<div class="stats-container">
 
-    <div class="stat-card">
+    <div class="stats-container">
 
-        <div class="stat-icon">📦</div>
 
-        <div>
-            <span>Total Products</span>
-            <h2>
-                <asp:Label ID="lblTotalProducts"
-                    runat="server"
-                    Text="0"></asp:Label>
-            </h2>
+        <!-- Total Products -->
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                📦
+            </div>
+
+            <div>
+
+                <span>
+                    Total Products
+                </span>
+
+                <h2>
+
+                    <asp:Label
+                        ID="lblTotalProducts"
+                        runat="server"
+                        Text="0">
+                    </asp:Label>
+
+                </h2>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Total Stock -->
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                📊
+            </div>
+
+            <div>
+
+                <span>
+                    Total Stock
+                </span>
+
+                <h2>
+
+                    <asp:Label
+                        ID="lblTotalStock"
+                        runat="server"
+                        Text="0">
+                    </asp:Label>
+
+                </h2>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Total Low Stock -->
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                ⚠️
+            </div>
+
+            <div>
+
+                <span>
+                    Total Low Stock
+                </span>
+
+                <h2>
+
+                    <asp:Label
+                        ID="lblTotalLowStock"
+                        runat="server"
+                        Text="0">
+                    </asp:Label>
+
+                </h2>
+
+            </div>
+
         </div>
 
     </div>
 
-
-    <div class="stat-card">
-
-        <div class="stat-icon">📊</div>
-
-        <div>
-            <span>Total Stock</span>
-            <h2>
-                <asp:Label ID="lblTotalStock"
-                    runat="server"
-                    Text="0"></asp:Label>
-            </h2>
-        </div>
-
-    </div>
-
-
-    <div class="stat-card">
-
-        <div class="stat-icon">⚠️</div>
-
-        <div>
-            <span>Total Low Stock</span>
-            <h2>
-                <asp:Label ID="lblTotalLowStock"
-                    runat="server"
-                    Text="0"></asp:Label>
-            </h2>
-        </div>
-
-    </div>
-
-</div>
 
 
     <!-- Main Content -->
+
     <div class="dashboard-grid">
 
 
         <!-- Stock Overview -->
+
         <div class="dashboard-card">
 
             <div class="card-header">
-                <h3>Stock Overview</h3>
-                <span>Current inventory status</span>
+
+                <h3>
+                    Stock Overview
+                </h3>
+
+                <span>
+                    Current inventory status
+                </span>
+
             </div>
+
 
             <div class="stock-overview">
 
+
                 <div class="overview-item">
-    <span>In Stock</span>
 
-    <strong>
-        <asp:Label ID="lblInStock"
-            runat="server"
-            Text="0">
-        </asp:Label>
-    </strong>
-</div>
+                    <span>
+                        In Stock
+                    </span>
 
+                    <strong>
 
-<div class="overview-item">
-    <span>Low Stock</span>
+                        <asp:Label
+                            ID="lblInStock"
+                            runat="server"
+                            Text="0">
+                        </asp:Label>
 
-    <strong>
-        <asp:Label ID="lblOverviewLowStock"
-            runat="server"
-            Text="0">
-        </asp:Label>
-    </strong>
-</div>
+                    </strong>
+
+                </div>
 
 
-<div class="overview-item">
-    <span>Out of Stock</span>
 
-    <strong>
-        <asp:Label ID="lblOutOfStock"
-            runat="server"
-            Text="0">
-        </asp:Label>
-    </strong>
-</div>
+                <div class="overview-item">
+
+                    <span>
+                        Low Stock
+                    </span>
+
+                    <strong>
+
+                        <asp:Label
+                            ID="lblOverviewLowStock"
+                            runat="server"
+                            Text="0">
+                        </asp:Label>
+
+                    </strong>
+
+                </div>
+
+
+
+                <div class="overview-item">
+
+                    <span>
+                        Out of Stock
+                    </span>
+
+                    <strong>
+
+                        <asp:Label
+                            ID="lblOutOfStock"
+                            runat="server"
+                            Text="0">
+                        </asp:Label>
+
+                    </strong>
+
+                </div>
+
 
             </div>
 
         </div>
 
 
+
         <!-- Quick Actions -->
+
         <div class="dashboard-card">
 
             <div class="card-header">
-                <h3>Quick Actions</h3>
-                <span>Monitor and manage stock</span>
+
+                <h3>
+                    Quick Actions
+                </h3>
+
+                <span>
+                    Monitor and manage stock
+                </span>
+
             </div>
+
 
             <div class="quick-actions">
 
+
                 <a href="AllStock.aspx" class="action-btn">
-                    <span>📦</span>
+
+                    <span>
+                        📦
+                    </span>
 
                     <div>
-                        <strong>View All Stock</strong>
-                        <small>Check current available inventory</small>
+
+                        <strong>
+                            View All Stock
+                        </strong>
+
+                        <small>
+                            Check current available inventory
+                        </small>
+
                     </div>
 
                 </a>
+
 
 
                 <a href="Stock_Low.aspx" class="action-btn">
-                    <span>⚠️</span>
+
+                    <span>
+                        ⚠️
+                    </span>
 
                     <div>
-                        <strong>Low Stock Products</strong>
-                        <small>Monitor products that need restocking</small>
+
+                        <strong>
+                            Low Stock Products
+                        </strong>
+
+                        <small>
+                            Monitor products that need restocking
+                        </small>
+
                     </div>
 
                 </a>
+
 
 
                 <a href="Stock_Report.aspx" class="action-btn">
-                    <span>📊</span>
+
+                    <span>
+                        📊
+                    </span>
 
                     <div>
-                        <strong>Stock Report</strong>
-                        <small>View detailed inventory reports</small>
+
+                        <strong>
+                            Stock Report
+                        </strong>
+
+                        <small>
+                            View detailed inventory reports
+                        </small>
+
                     </div>
 
                 </a>
+
 
             </div>
 
@@ -506,17 +662,24 @@ Inherits="Inventory_Management_System.Stock_Module.Stock_Dashboard" %>
     </div>
 
 
+
     <!-- Bottom Welcome -->
+
     <div class="welcome-card">
 
         <div>
-            <h2>Stock Control Center</h2>
+
+            <h2>
+                Stock Control Center
+            </h2>
 
             <p>
                 Keep track of your products, monitor stock levels,
                 identify low stock items, and manage inventory efficiently.
             </p>
+
         </div>
+
 
         <a href="AllStock.aspx">
             View Stock →
@@ -524,5 +687,7 @@ Inherits="Inventory_Management_System.Stock_Module.Stock_Dashboard" %>
 
     </div>
 
+
 </div>
+
 </asp:Content>
