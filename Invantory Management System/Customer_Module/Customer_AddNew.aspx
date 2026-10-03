@@ -22,875 +22,957 @@
     <style type="text/css">
 
         /* =========================================================
-           PAGE WRAPPER
-        ========================================================= */
+   GLOBAL BOX SIZING
+========================================================= */
 
-        .customer-page-wrapper {
+* {
+    box-sizing: border-box;
+}
 
-            position: relative;
 
-            width: 100%;
+/* =========================================================
+   PAGE WRAPPER
+========================================================= */
 
-            min-height: 100vh;
+.customer-page-wrapper {
+    position: relative;
 
-            padding-top: 1px;
+    width: 100%;
+    min-height: 100vh;
 
-            font-family: "Segoe UI", Arial, sans-serif;
+    padding: 1px 0 50px;
 
-            box-sizing: border-box;
-        }
+    font-family: "Segoe UI", Arial, sans-serif;
 
+    background: #f6f8fa;
 
-        /* =========================================================
-           MAIN CUSTOMER FORM CARD
-        ========================================================= */
+    overflow-x: hidden;
+}
 
-        .customer-form-card {
 
-            position: relative;
+/* =========================================================
+   MAIN CUSTOMER FORM CARD
+========================================================= */
 
-            z-index: 5;
+.customer-form-card {
+    position: relative;
 
-            width: 100%;
+    z-index: 5;
 
-            max-width: 920px;
+    /*
+       Reserve horizontal space for
+       LEFT + RIGHT side boxes.
+    */
+    width: calc(100% - 620px);
 
-            margin: 32px auto;
+    max-width: 920px;
 
-            padding: 30px 35px;
+    min-width: 650px;
 
-            box-sizing: border-box;
+    margin: 32px auto 40px;
 
-            background: #ffffff;
+    padding: 30px 35px;
 
-            border: 1px solid #e1e7ec;
+    background: #ffffff;
 
-            border-radius: 14px;
+    border: 1px solid #e1e7ec;
 
-            box-shadow:
-                0 5px 20px rgba(0,0,0,0.06);
-        }
+    border-radius: 14px;
 
+    box-shadow:
+        0 5px 20px rgba(0,0,0,0.06);
+}
 
-        /* =========================================================
-           FORM HEADER
-        ========================================================= */
 
-        .customer-form-header {
+/* =========================================================
+   FORM HEADER
+========================================================= */
 
-            text-align: center;
+.customer-form-header {
+    text-align: center;
 
-            margin-bottom: 30px;
-        }
+    margin-bottom: 30px;
+}
 
+.customer-form-header h1 {
+    margin: 0;
 
-        .customer-form-header h1 {
+    font-size: 27px;
 
-            margin: 0;
+    font-weight: 700;
 
-            font-size: 27px;
+    color: #243746;
+}
 
-            font-weight: 700;
+.customer-form-header h1 i {
+    margin-right: 9px;
 
-            color: #243746;
-        }
+    color: #2c5364;
+}
 
+.customer-form-header p {
+    margin: 8px 0 0;
 
-        .customer-form-header h1 i {
+    font-size: 13px;
 
-            margin-right: 9px;
+    color: #7b8790;
+}
 
-            color: #2c5364;
-        }
 
+/* =========================================================
+   CUSTOMER ID / DATE
+========================================================= */
 
-        .customer-form-header p {
+.customer-top-info {
+    display: grid;
 
-            margin: 8px 0 0;
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
 
-            font-size: 13px;
+    gap: 22px;
 
-            color: #7b8790;
-        }
+    margin-bottom: 26px;
+}
 
 
-        /* =========================================================
-           TOP INFORMATION ROW
-        ========================================================= */
+.customer-info-card {
+    min-height: 68px;
 
-        .customer-top-info {
+    display: flex;
 
-            display: grid;
+    align-items: center;
 
-            grid-template-columns:
-                repeat(2, 1fr);
+    justify-content: space-between;
 
-            gap: 22px;
+    padding: 0 15px;
 
-            margin-bottom: 26px;
-        }
+    background: #f6f8fa;
 
+    border: 1px solid #dce4e9;
 
-        /* =========================================================
-           CUSTOMER ID / DATE CARD
-        ========================================================= */
+    border-radius: 8px;
+}
 
-        .customer-info-card {
 
-            min-height: 68px;
+.customer-info-label {
+    display: flex;
 
-            display: flex;
+    align-items: center;
 
-            align-items: center;
+    color: #354854;
 
-            justify-content: space-between;
+    font-size: 12px;
 
-            padding: 0 15px;
+    font-weight: 600;
 
-            background: #f6f8fa;
+    letter-spacing: 0.2px;
+}
 
-            border: 1px solid #dce4e9;
 
-            border-radius: 8px;
+.customer-info-label i {
+    width: 19px;
 
-            box-sizing: border-box;
-        }
+    margin-right: 6px;
 
+    color: #2c5364;
+}
 
-        .customer-info-label {
 
-            display: flex;
+.customer-auto-generated {
+    padding: 9px 12px;
 
-            align-items: center;
+    background: #e9eef1;
 
-            color: #354854;
+    color: #294b5c;
 
-            font-size: 12px;
+    border-radius: 5px;
 
-            font-weight: 600;
+    font-size: 12px;
 
-            letter-spacing: 0.2px;
-        }
+    font-weight: 700;
 
+    white-space: nowrap;
+}
 
-        .customer-info-label i {
 
-            width: 19px;
+/* =========================================================
+   FORM ROW
+========================================================= */
 
-            margin-right: 6px;
+.customer-form-row {
+    display: grid;
 
-            color: #2c5364;
-        }
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
 
+    gap: 22px;
 
-        .customer-auto-generated {
+    margin-bottom: 24px;
+}
 
-            padding: 9px 12px;
 
-            background: #e9eef1;
+/* =========================================================
+   FORM GROUP
+========================================================= */
 
-            color: #294b5c;
+.customer-form-group {
+    width: 100%;
 
-            border-radius: 5px;
+    min-width: 0;
+}
 
-            font-size: 12px;
 
-            font-weight: 700;
+/* =========================================================
+   LABEL
+========================================================= */
 
-            white-space: nowrap;
-        }
+.customer-form-group label {
+    display: block;
 
+    margin-bottom: 8px;
 
-        /* =========================================================
-           FORM ROW
-        ========================================================= */
+    color: #354854;
 
-        .customer-form-row {
+    font-size: 13px;
 
-            display: grid;
+    font-weight: 600;
+}
 
-            grid-template-columns:
-                repeat(2, 1fr);
 
-            gap: 22px;
+.customer-form-group label i {
+    width: 18px;
 
-            margin-bottom: 24px;
-        }
+    margin-right: 5px;
 
+    color: #2c5364;
+}
 
-        /* =========================================================
-           FORM GROUP
-        ========================================================= */
 
-        .customer-form-group {
+.required {
+    margin-left: 2px;
 
-            width: 100%;
+    color: #c0392b;
+}
 
-            box-sizing: border-box;
-        }
 
+/* =========================================================
+   INPUT
+========================================================= */
 
-        /* =========================================================
-           LABEL
-        ========================================================= */
+.customer-form-control {
+    display: block;
 
-        .customer-form-group label {
+    width: 100%;
 
-            display: block;
+    height: 43px;
 
-            margin-bottom: 8px;
+    padding: 0 12px;
 
-            color: #354854;
+    border: 1px solid #d7dfe5;
 
-            font-size: 13px;
+    border-radius: 7px;
 
-            font-weight: 600;
-        }
+    background: #ffffff;
 
+    color: #273842;
 
-        .customer-form-group label i {
+    font-family: "Segoe UI", Arial, sans-serif;
 
-            width: 18px;
+    font-size: 13px;
 
-            margin-right: 5px;
+    outline: none;
 
-            color: #2c5364;
-        }
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
 
 
-        .required {
+.customer-form-control:hover {
+    border-color: #bdc9d1;
+}
 
-            margin-left: 2px;
 
-            color: #c0392b;
-        }
+.customer-form-control:focus {
+    border-color: #2c5364;
 
+    box-shadow:
+        0 0 0 3px rgba(44,83,100,0.08);
+}
 
-        /* =========================================================
-           FORM INPUT
-        ========================================================= */
 
-        .customer-form-control {
+.customer-form-control::placeholder {
+    color: #a2abb1;
+}
 
-            width: 100%;
 
-            height: 43px;
+/* =========================================================
+   READ ONLY
+========================================================= */
 
-            padding: 0 12px;
+.customer-form-control[readonly] {
+    background: #f5f7f8;
 
-            box-sizing: border-box;
+    color: #52616b;
 
-            border: 1px solid #d7dfe5;
+    cursor: default;
+}
 
-            border-radius: 7px;
 
-            background: #ffffff;
+/* =========================================================
+   NUMBER INPUT
+========================================================= */
 
-            color: #273842;
+input[type="number"].customer-form-control {
+    appearance: textfield;
+}
 
-            font-family: "Segoe UI", Arial, sans-serif;
+input[type="number"].customer-form-control::-webkit-inner-spin-button,
+input[type="number"].customer-form-control::-webkit-outer-spin-button {
+    margin: 0;
+}
 
-            font-size: 13px;
 
-            outline: none;
+/* =========================================================
+   GENDER
+========================================================= */
 
-            transition:
-                border-color 0.2s ease,
-                box-shadow 0.2s ease;
-        }
+.customer-gender-options {
+    height: 43px;
 
+    display: flex;
 
-        .customer-form-control:hover {
+    align-items: center;
 
-            border-color: #bdc9d1;
-        }
+    gap: 18px;
 
+    padding: 0 5px;
+}
 
-        .customer-form-control:focus {
 
-            border-color: #2c5364;
+.customer-gender-options label {
+    display: inline-flex;
 
-            box-shadow:
-                0 0 0 3px
-                rgba(44,83,100,0.08);
-        }
+    align-items: center;
 
+    margin: 0;
 
-        .customer-form-control::placeholder {
+    color: #4a5962;
 
-            color: #a2abb1;
-        }
+    font-size: 13px;
 
+    font-weight: 500;
 
-        /* =========================================================
-           READ ONLY
-        ========================================================= */
+    cursor: pointer;
+}
 
-        .customer-form-control[readonly] {
 
-            background: #f5f7f8;
+.customer-gender-options input {
+    margin-right: 5px;
 
-            color: #52616b;
+    accent-color: #2c5364;
+}
 
-            cursor: default;
-        }
 
+/* =========================================================
+   ADDRESS
+========================================================= */
 
-        /* =========================================================
-           NUMBER INPUT
-        ========================================================= */
+.customer-address-box {
+    width: 100% !important;
 
-        input[type="number"].customer-form-control {
+    height: 90px !important;
 
-            appearance: textfield;
-        }
+    min-height: 90px;
 
+    padding: 10px 12px !important;
 
-        input[type="number"].customer-form-control::-webkit-inner-spin-button,
-        input[type="number"].customer-form-control::-webkit-outer-spin-button {
+    resize: vertical;
 
-            margin: 0;
-        }
+    line-height: 1.5;
+}
 
 
-        /* =========================================================
-           GENDER
-        ========================================================= */
+/* =========================================================
+   ADDRESS ROW
+========================================================= */
 
-        .customer-gender-options {
+/*
+   Address currently occupies only the first
+   column because the parent has 2 columns.
 
-            height: 43px;
+   Make it span both columns.
+*/
 
-            display: flex;
+.customer-address-box {
+    grid-column: span 2;
+}
 
-            align-items: center;
 
-            gap: 18px;
+/* =========================================================
+   SECTION TITLE
+========================================================= */
 
-            padding: 0 5px;
+.customer-section-title {
+    display: flex;
 
-            box-sizing: border-box;
-        }
+    align-items: center;
 
+    margin: 30px 0 20px;
 
-        .customer-gender-options label {
+    padding-bottom: 9px;
 
-            display: inline-flex;
+    border-bottom: 1px solid #e5eaee;
 
-            align-items: center;
+    color: #2c5364;
 
-            margin: 0;
+    font-size: 15px;
 
-            color: #4a5962;
+    font-weight: 700;
+}
 
-            font-size: 13px;
 
-            font-weight: 500;
+.customer-section-title i {
+    margin-right: 8px;
+}
 
-            cursor: pointer;
-        }
 
+/* =========================================================
+   BUTTON AREA
+========================================================= */
 
-        .customer-gender-options input {
+.customer-button-area {
+    display: flex;
 
-            margin-right: 5px;
+    justify-content: center;
 
-            accent-color: #2c5364;
-        }
+    margin-top: 30px;
 
+    padding-top: 22px;
 
-        /* =========================================================
-           ADDRESS
-        ========================================================= */
+    border-top: 1px solid #e5eaee;
+}
 
-        .customer-address-box {
 
-            height: 90px;
+/* =========================================================
+   SAVE BUTTON
+========================================================= */
 
-            padding: 10px 12px;
+.customer-save-button {
+    min-width: 230px;
 
-            resize: vertical;
+    height: 45px;
 
-            line-height: 1.5;
-        }
+    padding: 0 25px;
 
+    border: none;
 
-        /* =========================================================
-           SECTION TITLE
-        ========================================================= */
+    border-radius: 7px;
 
-        .customer-section-title {
+    background: #2c5364;
 
-            display: flex;
+    color: #ffffff;
 
-            align-items: center;
+    font-family: "Segoe UI", Arial, sans-serif;
 
-            margin: 30px 0 20px;
+    font-size: 14px;
 
-            padding-bottom: 9px;
+    font-weight: 600;
 
-            border-bottom: 1px solid #e5eaee;
+    cursor: pointer;
 
-            color: #2c5364;
+    box-shadow:
+        0 3px 8px rgba(44,83,100,0.12);
 
-            font-size: 15px;
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
 
-            font-weight: 700;
-        }
 
+.customer-save-button:hover {
+    background: #203e4b;
 
-        .customer-section-title i {
+    transform: translateY(-1px);
 
-            margin-right: 8px;
-        }
+    box-shadow:
+        0 6px 14px rgba(44,83,100,0.18);
+}
 
 
-        /* =========================================================
-           SAVE BUTTON AREA
-        ========================================================= */
+.customer-save-button:active {
+    transform: translateY(0);
+}
 
-        .customer-button-area {
 
-            display: flex;
+/* =========================================================
+   SIDE INFORMATION BOXES
+========================================================= */
 
-            justify-content: center;
+.customer-side-boxes {
+    position: absolute;
 
-            margin-top: 30px;
+    top: 55px;
 
-            padding-top: 22px;
+    width: 260px;
 
-            border-top: 1px solid #e5eaee;
-        }
+    display: flex;
 
+    flex-direction: column;
 
-        /* =========================================================
-           SAVE BUTTON
-        ========================================================= */
+    gap: 35px;
 
-        .customer-save-button {
+    z-index: 2;
+}
 
-            min-width: 230px;
 
-            height: 45px;
+/* =========================================================
+   LEFT SIDE
+========================================================= */
 
-            padding: 0 25px;
+.customer-side-boxes.left {
+    left: 30px;
+}
 
-            border: none;
 
-            border-radius: 7px;
+/* =========================================================
+   RIGHT SIDE
+========================================================= */
 
-            background: #2c5364;
+.customer-side-boxes.right {
+    right: 30px;
+}
 
-            color: #ffffff;
 
-            font-family: "Segoe UI", Arial, sans-serif;
+/* =========================================================
+   SIDE BOX
+========================================================= */
 
-            font-size: 14px;
+.customer-side-box {
+    width: 260px;
 
-            font-weight: 600;
+    height: 260px;
 
-            cursor: pointer;
+    padding: 35px 28px;
 
-            box-shadow:
-                0 3px 8px
-                rgba(44,83,100,0.12);
+    display: flex;
 
-            transition:
-                background 0.2s ease,
-                transform 0.2s ease,
-                box-shadow 0.2s ease;
-        }
+    flex-direction: column;
 
+    justify-content: center;
 
-        .customer-save-button:hover {
+    align-items: center;
 
-            background: #203e4b;
+    text-align: center;
 
-            transform: translateY(-1px);
+    background: #ffffff;
 
-            box-shadow:
-                0 6px 14px
-                rgba(44,83,100,0.18);
-        }
+    border: 1px solid #dce4e9;
 
+    border-radius: 16px;
 
-        .customer-save-button:active {
+    box-shadow:
+        0 5px 20px rgba(0,0,0,0.07);
 
-            transform: translateY(0);
-        }
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
 
 
-        /* =========================================================
-           SIDE INFORMATION BOXES
-        ========================================================= */
+.customer-side-box:hover {
+    transform: translateY(-6px);
 
-        .customer-side-boxes {
+    border-color: #2c5364;
 
-            position: absolute;
+    box-shadow:
+        0 12px 28px rgba(44,83,100,0.15);
+}
 
-            top: 55px;
 
-            width: 260px;
+/* =========================================================
+   SIDE ICON
+========================================================= */
 
-            display: flex;
+.customer-side-icon {
+    width: 72px;
 
-            flex-direction: column;
+    height: 72px;
 
-            gap: 35px;
+    display: flex;
 
-            z-index: 2;
-        }
+    justify-content: center;
 
+    align-items: center;
 
-        /* =========================================================
-           LEFT SIDE
-        ========================================================= */
+    margin-bottom: 20px;
 
-        .customer-side-boxes.left {
+    border-radius: 14px;
 
-            left: 30px;
-        }
+    background: #eef2f5;
 
+    color: #2c5364;
 
-        /* =========================================================
-           RIGHT SIDE
-        ========================================================= */
+    font-size: 30px;
+}
 
-        .customer-side-boxes.right {
 
-            right: 30px;
-        }
+/* =========================================================
+   SIDE TITLE
+========================================================= */
 
+.customer-side-box h3 {
+    margin: 0 0 12px;
 
-        /* =========================================================
-           SIDE BOX
-        ========================================================= */
+    color: #273842;
 
-        .customer-side-box {
+    font-size: 20px;
 
-            width: 260px;
+    font-weight: 700;
+}
 
-            height: 260px;
 
-            box-sizing: border-box;
+/* =========================================================
+   SIDE DESCRIPTION
+========================================================= */
 
-            padding: 35px 28px;
+.customer-side-box p {
+    margin: 0;
 
-            display: flex;
+    max-width: 205px;
 
-            flex-direction: column;
+    color: #74818a;
 
-            justify-content: center;
+    font-size: 13px;
 
-            align-items: center;
+    line-height: 1.7;
+}
 
-            text-align: center;
 
-            background: #ffffff;
+/* =========================================================
+   VERY LARGE DESKTOP
+========================================================= */
 
-            border: 1px solid #dce4e9;
+@media (min-width: 1500px) {
 
-            border-radius: 16px;
+    .customer-side-boxes {
+        width: 285px;
 
-            box-shadow:
-                0 5px 20px
-                rgba(0,0,0,0.07);
+        gap: 40px;
+    }
 
-            transition:
-                all 0.25s ease;
-        }
+    .customer-side-boxes.left {
+        left: 45px;
+    }
 
+    .customer-side-boxes.right {
+        right: 45px;
+    }
 
-        /* =========================================================
-           SIDE BOX HOVER
-        ========================================================= */
+    .customer-side-box {
+        width: 285px;
 
-        .customer-side-box:hover {
+        height: 280px;
+    }
 
-            transform: translateY(-6px);
+    .customer-side-icon {
+        width: 78px;
 
-            border-color: #2c5364;
+        height: 78px;
 
-            box-shadow:
-                0 12px 28px
-                rgba(44,83,100,0.15);
-        }
+        font-size: 32px;
+    }
 
+    .customer-side-box h3 {
+        font-size: 21px;
+    }
 
-        /* =========================================================
-           SIDE ICON
-        ========================================================= */
+    .customer-side-box p {
+        max-width: 220px;
 
-        .customer-side-icon {
+        font-size: 13px;
+    }
 
-            width: 72px;
+    .customer-form-card {
+        width: calc(100% - 700px);
 
-            height: 72px;
+        max-width: 920px;
+    }
+}
 
-            display: flex;
 
-            justify-content: center;
+/* =========================================================
+   MEDIUM DESKTOP
+========================================================= */
 
-            align-items: center;
+@media (max-width: 1499px) and (min-width: 1201px) {
 
-            margin-bottom: 20px;
+    .customer-side-boxes {
+        width: 230px;
 
-            border-radius: 14px;
+        gap: 30px;
+    }
 
-            background: #eef2f5;
+    .customer-side-boxes.left {
+        left: 20px;
+    }
 
-            color: #2c5364;
+    .customer-side-boxes.right {
+        right: 20px;
+    }
 
-            font-size: 30px;
-        }
+    .customer-side-box {
+        width: 230px;
 
+        height: 235px;
 
-        /* =========================================================
-           SIDE BOX TITLE
-        ========================================================= */
+        padding: 25px 20px;
+    }
 
-        .customer-side-box h3 {
+    .customer-side-icon {
+        width: 62px;
 
-            margin: 0 0 12px;
+        height: 62px;
 
-            color: #273842;
+        font-size: 26px;
 
-            font-size: 20px;
+        margin-bottom: 15px;
+    }
 
-            font-weight: 700;
-        }
+    .customer-side-box h3 {
+        font-size: 18px;
+    }
 
+    .customer-side-box p {
+        max-width: 190px;
 
-        /* =========================================================
-           SIDE BOX DESCRIPTION
-        ========================================================= */
+        font-size: 12px;
 
-        .customer-side-box p {
+        line-height: 1.6;
+    }
 
-            margin: 0;
+    .customer-form-card {
+        width: calc(100% - 520px);
 
-            max-width: 205px;
+        max-width: 920px;
 
-            color: #74818a;
+        padding: 28px 30px;
+    }
+}
 
-            font-size: 13px;
 
-            line-height: 1.7;
-        }
+/* =========================================================
+   SMALL DESKTOP
+========================================================= */
 
+@media (max-width: 1200px) and (min-width: 1051px) {
 
-        /* =========================================================
-           LARGE SCREEN
-        ========================================================= */
+    .customer-side-boxes {
+        width: 180px;
 
-        @media (min-width: 1400px) {
+        gap: 25px;
+    }
 
-            .customer-side-boxes {
+    .customer-side-boxes.left {
+        left: 10px;
+    }
 
-                width: 285px;
+    .customer-side-boxes.right {
+        right: 10px;
+    }
 
-                gap: 40px;
-            }
+    .customer-side-box {
+        width: 180px;
 
+        height: 205px;
 
-            .customer-side-boxes.left {
+        padding: 20px 15px;
+    }
 
-                left: 45px;
-            }
+    .customer-side-icon {
+        width: 55px;
 
+        height: 55px;
 
-            .customer-side-boxes.right {
+        font-size: 23px;
 
-                right: 45px;
-            }
+        margin-bottom: 13px;
+    }
 
+    .customer-side-box h3 {
+        font-size: 16px;
 
-            .customer-side-box {
+        margin-bottom: 8px;
+    }
 
-                width: 285px;
+    .customer-side-box p {
+        max-width: 155px;
 
-                height: 280px;
-            }
+        font-size: 11px;
 
+        line-height: 1.5;
+    }
 
-            .customer-side-icon {
+    .customer-form-card {
+        width: calc(100% - 410px);
 
-                width: 78px;
+        max-width: 900px;
 
-                height: 78px;
+        min-width: 600px;
 
-                font-size: 32px;
-            }
+        padding: 28px 30px;
+    }
 
+    .customer-form-row {
+        gap: 15px;
+    }
+}
 
-            .customer-side-box h3 {
 
-                font-size: 21px;
-            }
+/* =========================================================
+   TABLET
+========================================================= */
 
+@media (max-width: 1050px) {
 
-            .customer-side-box p {
+    .customer-side-boxes {
+        display: none;
+    }
 
-                max-width: 220px;
+    .customer-form-card {
+        width: 90%;
 
-                font-size: 13px;
-            }
-        }
+        min-width: 0;
 
+        max-width: 920px;
 
-        /* =========================================================
-           MEDIUM SCREEN
-        ========================================================= */
+        margin: 30px auto;
 
-        @media (max-width: 1250px) {
+        padding: 28px;
+    }
+}
 
-            .customer-side-boxes {
 
-                width: 190px;
+/* =========================================================
+   SMALL TABLET
+========================================================= */
 
-                gap: 25px;
-            }
+@media (max-width: 900px) {
 
+    .customer-form-card {
+        width: 92%;
 
-            .customer-side-boxes.left {
+        padding: 26px;
+    }
 
-                left: 12px;
-            }
+    .customer-form-row {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
 
+        gap: 20px;
+    }
+}
 
-            .customer-side-boxes.right {
 
-                right: 12px;
-            }
+/* =========================================================
+   MOBILE
+========================================================= */
 
+@media (max-width: 600px) {
 
-            .customer-side-box {
+    .customer-form-card {
+        width: 94%;
 
-                width: 190px;
+        margin: 20px auto;
 
-                height: 205px;
+        padding: 22px 18px;
 
-                padding: 20px;
-            }
+        border-radius: 12px;
+    }
 
+    .customer-form-header {
+        margin-bottom: 25px;
+    }
 
-            .customer-side-icon {
+    .customer-form-header h1 {
+        font-size: 23px;
+    }
 
-                width: 55px;
+    .customer-form-header p {
+        font-size: 12px;
+    }
 
-                height: 55px;
+    .customer-top-info {
+        grid-template-columns: 1fr;
 
-                margin-bottom: 13px;
+        gap: 15px;
+    }
 
-                font-size: 23px;
-            }
+    .customer-form-row {
+        grid-template-columns: 1fr;
 
+        gap: 18px;
 
-            .customer-side-box h3 {
+        margin-bottom: 18px;
+    }
 
-                font-size: 16px;
-            }
+    /*
+       Address should become a normal
+       single-column field on mobile.
+    */
 
+    .customer-address-box {
+        grid-column: auto;
+    }
 
-            .customer-side-box p {
+    .customer-gender-options {
+        justify-content: flex-start;
 
-                font-size: 11px;
+        gap: 12px;
+    }
 
-                line-height: 1.5;
-            }
-        }
+    .customer-section-title {
+        margin-top: 25px;
+    }
 
+    .customer-button-area {
+        margin-top: 25px;
+    }
 
-        /* =========================================================
-           HIDE SIDE BOXES
-        ========================================================= */
+    .customer-save-button {
+        width: 100%;
 
-        @media (max-width: 1050px) {
+        min-width: 0;
+    }
+}
 
-            .customer-side-boxes {
 
-                display: none;
-            }
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
 
+@media (max-width: 400px) {
 
-            .customer-form-card {
+    .customer-form-card {
+        width: 96%;
 
-                max-width: 920px;
-            }
-        }
+        padding: 20px 14px;
+    }
 
+    .customer-form-header h1 {
+        font-size: 21px;
+    }
 
-        /* =========================================================
-           TABLET
-        ========================================================= */
+    .customer-gender-options {
+        gap: 8px;
+    }
 
-        @media (max-width: 900px) {
-
-            .customer-form-card {
-
-                max-width: 90%;
-
-                padding: 28px;
-            }
-
-
-            .customer-form-row {
-
-                grid-template-columns:
-                    repeat(2, 1fr);
-            }
-        }
-
-
-        /* =========================================================
-           MOBILE
-        ========================================================= */
-
-        @media (max-width: 600px) {
-
-            .customer-form-card {
-
-                max-width: 94%;
-
-                padding: 22px 18px;
-            }
-
-
-            .customer-form-row {
-
-                grid-template-columns: 1fr;
-
-                gap: 18px;
-
-                margin-bottom: 18px;
-            }
-
-
-            .customer-top-info {
-
-                grid-template-columns: 1fr;
-
-                gap: 15px;
-            }
-
-
-            .customer-form-header h1 {
-
-                font-size: 23px;
-            }
-
-
-            .customer-section-title {
-
-                margin-top: 25px;
-            }
-
-
-            .customer-save-button {
-
-                width: 100%;
-            }
-        }
+    .customer-gender-options label {
+        font-size: 12px;
+    }
+}
 
 
     </style>
