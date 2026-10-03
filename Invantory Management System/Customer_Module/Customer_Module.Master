@@ -1,0 +1,240 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true"
+    CodeBehind="Customer_Module.master.cs"
+    Inherits="Inventory_Management_System.Customer_Module_Master" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+
+    <meta charset="utf-8" />
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0" />
+
+    <title>Customer Management</title>
+
+    <!-- Customer Module CSS -->
+    <link href="../CSS/Customer_Module.css?v=2" rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+    <asp:ContentPlaceHolder ID="head"
+        runat="server">
+    </asp:ContentPlaceHolder>
+
+</head>
+
+<body>
+
+    <form id="form1" runat="server">
+
+        <!-- =====================================================
+         CUSTOMER MODULE HEADER
+         ===================================================== -->
+
+        <header class="customer-header">
+
+            <!-- Left : Module Name -->
+
+            <div class="customer-brand">
+
+                <div class="brand-icon">
+                    <i class="fa-solid fa-users"></i>
+                </div>
+
+                <div class="brand-text">
+
+                    <h1>Customer Management</h1>
+
+                    <span>Inventory Management System
+                    </span>
+
+                </div>
+
+            </div>
+
+            <div class="stock-flow-title">
+                STOCK FLOW
+            </div>
+
+
+            <!-- Right : Date -->
+
+            <div class="header-date">
+
+                <div class="date-icon">
+                    <i class="fa-regular fa-calendar-days"></i>
+                </div>
+
+                <div class="date-content">
+
+                    <span class="date-label">TODAY
+                    </span>
+
+                    <asp:Label
+                        ID="lblDate"
+                        runat="server"
+                        CssClass="current-date">
+                    </asp:Label>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- =====================================================
+         HORIZONTAL NAVBAR
+         ===================================================== -->
+
+        <nav class="customer-navbar">
+
+            <div class="navbar-container">
+
+
+                <!-- Dashboard -->
+
+                <a href="Customer_Dashboard.aspx"
+                    class="nav-item">
+
+                    <i class="fa-solid fa-house"></i>
+
+                    <span>Dashboard</span>
+
+                </a>
+
+
+                <!-- Add Customer -->
+
+                <a href="Customer_AddNew.aspx"
+                    class="nav-item">
+
+                    <i class="fa-solid fa-user-plus"></i>
+
+                    <span>Add Customer</span>
+
+                </a>
+
+
+                <!-- Search Customer -->
+
+                <a href="Customer_Search.aspx"
+                    class="nav-item">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <span>Search Customer</span>
+
+                </a>
+
+
+                <!-- All Customers -->
+
+                <a href="AllCustomer.aspx"
+                    class="nav-item">
+
+                    <i class="fa-solid fa-users"></i>
+
+                    <span>All Customers</span>
+
+                </a>
+
+
+
+                <!-- Back to Main -->
+
+                <a href="../Admin_Dashboard.aspx"
+                    class="nav-item nav-back">
+
+                    <i class="fa-solid fa-arrow-left"></i>
+
+                    <span>Admin Dashboard</span>
+
+                </a>
+
+            </div>
+
+        </nav>
+
+
+        <!-- =====================================================
+         PAGE CONTENT
+         ===================================================== -->
+
+        <main class="customer-content">
+
+            <asp:ContentPlaceHolder
+                ID="ContentPlaceHolder1"
+                runat="server">
+            </asp:ContentPlaceHolder>
+
+        </main>
+
+
+        <!-- =====================================================
+         FOOTER
+         ===================================================== -->
+
+        <footer class="customer-footer">
+
+            <div>
+
+                <i class="fa-solid fa-boxes-stacked"></i>
+
+                <span>Inventory Management System
+                </span>
+
+            </div>
+
+            <div>
+                Customer Management Module
+            </div>
+
+        </footer>
+
+
+        <!-- =====================================================
+         DATE SCRIPT
+         ===================================================== -->
+
+        <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const dateLabel =
+                document.getElementById(
+                    '<%= lblDate.ClientID %>'
+                );
+
+            if (dateLabel) {
+
+                const today = new Date();
+
+                const options = {
+                    weekday: 'long',
+                    day: '2-digit',
+                    month: 'long',
+                    year: 'numeric'
+                };
+
+                dateLabel.textContent =
+                    today.toLocaleDateString(
+                        'en-IN',
+                        options
+                    );
+
+            }
+
+        });
+
+        </script>
+
+
+    </form>
+
+</body>
+</html>

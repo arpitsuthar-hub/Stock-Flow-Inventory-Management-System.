@@ -1,0 +1,240 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true"
+    CodeBehind="Stock_Module.master.cs"
+    Inherits="Inventory_Management_System.Stock_Module.Stock_Module" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+
+    <meta charset="utf-8" />
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0" />
+
+    <title>Stock Management</title>
+
+    <link href="../CSS/Stock_Module.css?v=2" rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+    <asp:ContentPlaceHolder
+        ID="head"
+        runat="server">
+    </asp:ContentPlaceHolder>
+
+</head>
+
+<body>
+
+    <form id="form1" runat="server">
+
+        <!-- =========================================
+         STOCK HEADER
+    ========================================== -->
+
+        <header class="stock-header">
+
+            <div class="stock-brand">
+
+                <div class="brand-icon">
+                    <i class="fa-solid fa-boxes-stacked"></i>
+                </div>
+
+                <div class="brand-text">
+
+                    <h1>Stock Management</h1>
+
+                    <span>Inventory Management System
+                    </span>
+
+                </div>
+
+            </div>
+
+            <div class="stock-flow-title">
+                STOCK FLOW
+            </div>
+
+            <!-- DATE -->
+
+            <div class="header-date">
+
+                <div class="date-icon">
+                    <i class="fa-regular fa-calendar-days"></i>
+                </div>
+
+                <div class="date-content">
+
+                    <span class="date-label">TODAY
+                    </span>
+
+                    <asp:Label
+                        ID="lblDate"
+                        runat="server"
+                        CssClass="current-date">
+                    </asp:Label>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- =========================================
+         HORIZONTAL NAVIGATION
+    ========================================== -->
+
+        <nav class="stock-navbar">
+
+            <div class="navbar-container">
+
+
+                <!-- DASHBOARD -->
+
+                <a href="Stock_Dashboard.aspx"
+                    class="nav-item">
+
+                    <i class="fa-solid fa-house"></i>
+
+                    <span>Dashboard
+                    </span>
+
+                </a>
+
+
+                <!-- STOCK IN -->
+
+                <a href="Stock_In.aspx"
+                    class="nav-item">
+
+                    <i class="fa-solid fa-arrow-down"></i>
+
+                    <span>Stock In
+                    </span>
+
+                </a>
+
+
+                <!-- STOCK OUT -->
+
+                <a href="Stock_Low.aspx"
+                    class="nav-item">
+
+                    <i class="fa-solid fa-arrow-up"></i>
+
+                    <span>Low Stock
+                    </span>
+
+                </a>
+
+
+                <!-- STOCK REPORT -->
+
+                <a href="Stock_Report.aspx"
+                    class="nav-item">
+
+                    <i class="fa-solid fa-chart-column"></i>
+
+                    <span>Stock Report
+                    </span>
+
+                </a>
+
+
+                <!-- MAIN DASHBOARD -->
+
+                <a href="../Admin_Dashboard.aspx"
+                    class="nav-item nav-back">
+
+                    <i class="fa-solid fa-arrow-left"></i>
+
+                    <span>Admin Dashboard
+                    </span>
+
+                </a>
+
+            </div>
+
+        </nav>
+
+
+        <!-- =========================================
+         MAIN CONTENT
+    ========================================== -->
+
+        <main class="stock-content">
+
+            <asp:ContentPlaceHolder
+                ID="ContentPlaceHolder1"
+                runat="server">
+            </asp:ContentPlaceHolder>
+
+        </main>
+
+
+        <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+        <footer class="stock-footer">
+
+            <div>
+
+                <i class="fa-solid fa-boxes-stacked"></i>
+
+                <span>Inventory Management System
+                </span>
+
+            </div>
+
+            <div>
+                Stock Management Module
+            </div>
+
+        </footer>
+
+
+        <!-- =========================================
+         CURRENT DATE
+    ========================================== -->
+
+        <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const dateLabel =
+                document.getElementById(
+                    '<%= lblDate.ClientID %>'
+                );
+
+            if (dateLabel) {
+
+                const today = new Date();
+
+                const options = {
+                    weekday: 'long',
+                    day: '2-digit',
+                    month: 'long',
+                    year: 'numeric'
+                };
+
+                dateLabel.textContent =
+                    today.toLocaleDateString(
+                        'en-IN',
+                        options
+                    );
+
+            }
+
+        });
+
+        </script>
+
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Customer.master.cs" Inherits="Inventory_Management_System.Customer" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <title>Customer Panel</title>
+
+    <link href="Customer.css" rel="stylesheet" />
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <div class="header">
+
+            <h1>CUSTOMER DETAILS</h1>
+
+            <div class="logout-section">
+                <a href="logout.aspx">Logout</a>
+            </div>
+
+        </div>
+
+        <hr />
+
+        <table class="menu-table">
+            <tr align="center">
+                <td><a href="~/Customer/CustomerProfile.aspx">Profile</a></td>
+                <td><a href="~/Customer/Customer_MyPurchase.aspx">All Purchase</a></td>
+            </tr>
+        </table>
+
+        <div class="content-area">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+    </form>
+</body>
+</html>

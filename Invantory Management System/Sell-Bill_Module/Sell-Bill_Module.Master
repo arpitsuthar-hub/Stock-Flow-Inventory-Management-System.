@@ -1,0 +1,238 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true"
+    CodeBehind="Sell-Bill_Module.Master.cs"
+    Inherits="Inventory_Management_System.Sell_Bill_Module.Sell_Bill" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Sell & Bill Management</title>
+
+    <link href="../CSS/Sell-Bill.css?v=2" rel="stylesheet" />
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+</head>
+
+<body>
+
+    <form id="form1" runat="server">
+
+        <!-- =========================================
+         HEADER
+    ========================================== -->
+
+        <header class="sell-header">
+
+            <!-- BRAND -->
+
+            <div class="sell-brand">
+
+                <div class="brand-icon">
+                    <i class="fa-solid fa-file-invoice-dollar"></i>
+                </div>
+
+                <div class="brand-text">
+
+                    <h1>Sell & Bill Management</h1>
+
+                    <span>Inventory Management System</span>
+
+                </div>
+
+            </div>
+
+            <div class="stock-flow-title">
+                STOCK FLOW
+            </div>
+
+
+            <!-- DATE -->
+
+            <div class="header-date">
+
+                <div class="date-icon">
+                    <i class="fa-regular fa-calendar-days"></i>
+                </div>
+
+                <div class="date-content">
+
+                    <span class="date-label">TODAY</span>
+
+                    <asp:Label
+                        ID="lblDate"
+                        runat="server"
+                        CssClass="current-date">
+                    </asp:Label>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- =========================================
+         HORIZONTAL NAVIGATION
+    ========================================== -->
+
+        <nav class="sell-navbar">
+
+            <div class="navbar-container">
+
+
+                <!-- DASHBOARD -->
+
+                <a href="Sell-Bill_Dashboard.aspx"
+                    class="nav-item">
+
+                    <i class="fa-solid fa-house"></i>
+
+                    <span>Dashboard</span>
+
+                </a>
+
+
+                <!-- NEW SELL -->
+
+                <a href="Sell_New.aspx"
+                    class="nav-item">
+
+                    <i class="fa-solid fa-cart-plus"></i>
+
+                    <span>New Sell</span>
+
+                </a>
+
+
+                <!-- SEARCH SELL -->
+
+                <a href="Sell_Search.aspx"
+                    class="nav-item">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <span>Search Sell</span>
+
+                </a>
+
+
+                <!-- ALL SELLS -->
+
+                <a href="AllSells.aspx"
+                    class="nav-item">
+
+                    <i class="fa-solid fa-list"></i>
+
+                    <span>All Sells</span>
+
+                </a>
+
+
+                <!-- ALL BILLS -->
+
+                <a href="AllBills.aspx"
+                    class="nav-item">
+
+                    <i class="fa-solid fa-file-invoice"></i>
+
+                    <span>All Bills</span>
+
+                </a>
+
+
+                <!-- MAIN DASHBOARD -->
+
+                <a href="../Admin_Dashboard.aspx"
+                    class="nav-item nav-back">
+
+                    <i class="fa-solid fa-arrow-left"></i>
+
+                    <span>Admin Dashboard</span>
+
+                </a>
+
+            </div>
+
+        </nav>
+
+
+        <!-- =========================================
+         MAIN CONTENT
+    ========================================== -->
+
+        <main class="sell-content">
+
+            <asp:ContentPlaceHolder
+                ID="ContentPlaceHolder1"
+                runat="server">
+            </asp:ContentPlaceHolder>
+
+        </main>
+
+
+        <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+        <footer class="sell-footer">
+
+            <div>
+
+                <i class="fa-solid fa-boxes-stacked"></i>
+
+                <span>Inventory Management System</span>
+
+            </div>
+
+            <div>
+                Sell & Bill Management Module
+            </div>
+
+        </footer>
+
+
+        <!-- =========================================
+         DATE SCRIPT
+    ========================================== -->
+
+        <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const dateLabel =
+                document.getElementById('<%= lblDate.ClientID %>');
+
+            if (dateLabel) {
+
+                const today = new Date();
+
+                const options = {
+                    weekday: 'long',
+                    day: '2-digit',
+                    month: 'long',
+                    year: 'numeric'
+                };
+
+                dateLabel.textContent =
+                    today.toLocaleDateString('en-IN', options);
+
+            }
+
+        });
+
+        </script>
+
+
+    </form>
+
+</body>
+</html>

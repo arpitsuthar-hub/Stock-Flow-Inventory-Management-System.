@@ -7,11 +7,11 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Invantory_Management_System
+namespace Inventory_Management_System
 {
     public partial class Login : System.Web.UI.Page
     {
-        SqlConnection con = new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Invantory;Integrated Security=True");
+        SqlConnection con = new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Inventory;Integrated Security=True");
         SqlDataAdapter da;
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -24,7 +24,7 @@ namespace Invantory_Management_System
             string type = Request.QueryString["type"];
             if(type =="Admin")
             {
-                string s = "select * from login where logid='" + TextBox1.Text + "'and logpass='" + TextBox2.Text + "'";
+                string s = "select * from login where logid='" + TextBox1.Text + "'and logpassword='" + TextBox2.Text + "'";
 
                 da = new SqlDataAdapter(s, con);
                 DataSet ds = new DataSet();
@@ -33,7 +33,7 @@ namespace Invantory_Management_System
                 if (ds.Tables[0].Rows.Count > 0)
                 {
                     Response.Write("<script>alert('Admin Login Successfully');</script>");
-                    Response.Redirect("InHome.aspx");
+                    Response.Redirect("Admin_Dashboard.aspx");
                 }
                 else
                 {
@@ -47,16 +47,16 @@ namespace Invantory_Management_System
             
             else if(type == "Supplier")
             {
-                string s1 = "select * from supplier where userid='" + TextBox1.Text + "'and password='" + TextBox2.Text + "'";
+                string s1 = "select * from supplier where sup_userid='" + TextBox1.Text + "'and sup_password='" + TextBox2.Text + "'";
                 da = new SqlDataAdapter(s1, con);
                 DataSet ds1 = new DataSet();
                 da.Fill(ds1);
 
                 if (ds1.Tables[0].Rows.Count > 0)
                 {
-                    Session["sid"] = ds1.Tables[0].Rows[0]["sid"].ToString();
+                    Session["sup_id"] = ds1.Tables[0].Rows[0]["sup_id"].ToString();
                     Response.Write("<script>alert('Supplier Login Successfully');</script>");
-                    Response.Redirect("SupplierProfile.aspx?sid=" + Session["sid"]);
+                    Response.Redirect("~/Supplier_Master/SupplierMaster_Dashboard.aspx?sup_id=" + Session["sup_id"]);
                 }
                 else
                 {

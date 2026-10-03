@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Invantory_Management_System
+namespace Inventory_Management_System
 {
 
 
@@ -51,21 +51,30 @@ namespace Invantory_Management_System
         protected global::System.Web.UI.WebControls.Label lblTotalProducts;
 
         /// <summary>
-        /// lblTotalSalesToday control.
+        /// lblTotalSuppliers control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTotalSalesToday;
+        protected global::System.Web.UI.WebControls.Label lblTotalSuppliers;
 
         /// <summary>
-        /// lblDailySell control.
+        /// lblTotalCustomers control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDailySell;
+        protected global::System.Web.UI.WebControls.Label lblTotalCustomers;
+
+        /// <summary>
+        /// lblTotalSales control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTotalSales;
     }
 }

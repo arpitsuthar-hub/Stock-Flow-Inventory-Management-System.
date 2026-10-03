@@ -1,0 +1,750 @@
+﻿/* =========================================================
+   ADMIN DASHBOARD
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #ffffff;
+    background-image: linear-gradient( 135deg, rgba(8, 35, 75, 0.72), rgba(20, 91, 160, 0.62) ), url("Images/Admin.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+   ========================================================= */
+
+.main-container {
+    width: 100%;
+    min-height: 100vh;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.header {
+    position: relative;
+    width: 100%;
+    height: 125px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 45px;
+    background: linear-gradient( 135deg, rgba(5, 18, 35, 0.98), rgba(12, 35, 61, 0.96) );
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+}
+
+
+/* =========================================================
+   ADMIN TITLE
+   ========================================================= */
+
+.admin-title {
+    min-width: 230px;
+    padding-left: 18px;
+    border-left: 4px solid #2196f3;
+}
+
+    .admin-title .admin-label {
+        display: block;
+        font-size: 30px;
+        font-weight: 900;
+        letter-spacing: 5px;
+        color: #ffffff;
+    }
+
+    .admin-title h1 {
+        margin: 3px 0 0 0;
+        font-size: 18px;
+        font-weight: 600;
+        letter-spacing: 3px;
+        color: #8fc9ff;
+    }
+
+
+/* =========================================================
+   STOCK-FLOW BRAND
+   ========================================================= */
+
+.stockflow-brand {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    white-space: nowrap;
+}
+
+
+/* LARGE + BOLD STOCK-FLOW */
+
+.stockflow-name {
+    font-size: 46px;
+    font-weight: 900;
+    letter-spacing: 8px;
+    color: #ffffff;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.55);
+}
+
+
+/* SUBTITLE */
+
+.stockflow-subtitle {
+    margin-top: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 4px;
+    color: #82c7ff;
+}
+
+
+/* =========================================================
+   DATE / TIME
+   ========================================================= */
+
+.date-box {
+    min-width: 190px;
+    padding: 12px 18px;
+    text-align: center;
+    background: linear-gradient( 135deg, rgba(255, 255, 255, 0.10), rgba(255, 255, 255, 0.04) );
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 10px;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 5px 15px rgba(0, 0, 0, 0.20);
+}
+
+.date-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #dceeff;
+}
+
+.date-icon {
+    font-size: 17px;
+    color: #64b5f6;
+}
+
+.time-row {
+    margin-top: 5px;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   MAIN DASHBOARD LINK
+   ========================================================= */
+
+.main-dashboard-link {
+    position: absolute;
+    left: 45px;
+    bottom: -38px;
+    padding: 8px 16px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    background: rgba(8, 35, 75, 0.92);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+    .main-dashboard-link:hover {
+        background: #1976d2;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.30);
+    }
+
+
+/* =========================================================
+   PAGE CONTENT
+   ========================================================= */
+
+.page-content {
+    width: 94%;
+    max-width: 1500px;
+    margin: 55px auto 35px auto;
+}
+
+
+/* =========================================================
+   SECTION HEADING
+   ========================================================= */
+
+.section-heading {
+    margin-bottom: 22px;
+    text-align: center;
+}
+
+.section-label {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: #9ed4ff;
+}
+
+.section-heading h2 {
+    margin: 0;
+    font-size: 29px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: #ffffff;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+}
+
+.section-heading p {
+    margin: 8px 0 0 0;
+    font-size: 13px;
+    color: #e1efff;
+}
+
+
+/* =========================================================
+   SYSTEM SUMMARY
+   5 CURRENT CARDS CENTERED
+   ========================================================= */
+
+.summary-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(180px, 1fr));
+    gap: 18px;
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   SUMMARY CARD
+   ========================================================= */
+
+.summary-card {
+    min-height: 175px;
+    padding: 20px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient( 145deg, rgba(255, 255, 255, 0.98), rgba(238, 247, 255, 0.96) );
+    border: 1px solid rgba(255, 255, 255, 0.80);
+    border-radius: 14px;
+    color: #102a43;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+
+    /* TOP BLUE LINE */
+
+    .summary-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: linear-gradient( 90deg, #1565c0, #42a5f5 );
+    }
+
+
+    /* CARD HOVER */
+
+    .summary-card:hover {
+        transform: translateY(-7px);
+        border-color: #64b5f6;
+        box-shadow: 0 18px 35px rgba(0, 0, 0, 0.32);
+    }
+
+
+/* =========================================================
+   SUMMARY TOP
+   ========================================================= */
+
+.summary-top {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+
+/* =========================================================
+   SUMMARY ICON
+   ========================================================= */
+
+.summary-icon {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    font-size: 21px;
+    font-weight: 700;
+    color: #1565c0;
+    background: rgba(33, 150, 243, 0.12);
+    border: 1px solid rgba(33, 150, 243, 0.18);
+}
+
+
+/* =========================================================
+   SUMMARY STATUS
+   ========================================================= */
+
+.summary-status {
+    padding: 5px 9px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #1976d2;
+    background: #e3f2fd;
+    border-radius: 20px;
+}
+
+
+/* =========================================================
+   SUMMARY TITLE
+   ========================================================= */
+
+.summary-title {
+    margin-top: 4px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #52677a;
+}
+
+
+/* =========================================================
+   SUMMARY VALUE
+   ASP.NET LABEL
+   ========================================================= */
+
+.summary-value {
+    display: block;
+    margin-top: 8px;
+    font-size: 35px;
+    line-height: 1;
+    font-weight: 900;
+    color: #0d47a1;
+}
+
+
+/* =========================================================
+   SUMMARY LINK
+   ========================================================= */
+
+.summary-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: 14px;
+    padding: 6px 13px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #1976d2;
+    text-decoration: none;
+    border: 1px solid #90caf9;
+    border-radius: 20px;
+    transition: all 0.25s ease;
+}
+
+    .summary-link span {
+        font-size: 15px;
+        transition: transform 0.25s ease;
+    }
+
+    .summary-link:hover {
+        color: #ffffff;
+        background: #1976d2;
+        border-color: #1976d2;
+    }
+
+        .summary-link:hover span {
+            transform: translateX(3px);
+        }
+
+
+/* =========================================================
+   SYSTEM MODULES
+   ========================================================= */
+
+.management-section {
+    margin-top: 55px;
+}
+
+
+/* =========================================================
+   MANAGEMENT CONTAINER
+   3 MODULES + 3 MODULES
+   ========================================================= */
+
+.management-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   MANAGEMENT CARD
+   ========================================================= */
+
+.management-card {
+    min-height: 330px;
+    padding: 25px;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient( 145deg, rgba(255, 255, 255, 0.98), rgba(241, 248, 255, 0.96) );
+    border: 1px solid rgba(255, 255, 255, 0.80);
+    border-radius: 15px;
+    color: #102a43;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.26);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+
+    /* TOP ACCENT */
+
+    .management-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background: linear-gradient( 90deg, #1565c0, #42a5f5 );
+    }
+
+
+    /* HOVER */
+
+    .management-card:hover {
+        transform: translateY(-8px);
+        border-color: #64b5f6;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.32);
+    }
+
+
+/* =========================================================
+   MODULE HEADER
+   ========================================================= */
+
+.module-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* =========================================================
+   MODULE ICON
+   ========================================================= */
+
+.module-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 11px;
+    font-size: 23px;
+    font-weight: 700;
+    color: #1565c0;
+    background: linear-gradient( 135deg, rgba(33, 150, 243, 0.16), rgba(33, 150, 243, 0.06) );
+    border: 1px solid rgba(33, 150, 243, 0.18);
+}
+
+
+/* =========================================================
+   MODULE NUMBER
+   ========================================================= */
+
+.module-number {
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: #1976d2;
+}
+
+
+/* =========================================================
+   MODULE TITLE
+   ========================================================= */
+
+.management-card h3 {
+    margin: 16px 0 0 0;
+    font-size: 21px;
+    line-height: 1.3;
+    font-weight: 800;
+    color: #102a43;
+}
+
+
+/* =========================================================
+   MODULE DESCRIPTION
+   ========================================================= */
+
+.description {
+    margin: 8px 0 0 0;
+    font-size: 13px;
+    line-height: 1.55;
+    color: #607d8b;
+}
+
+
+/* =========================================================
+   MANAGEMENT LIST
+   ========================================================= */
+
+.management-list {
+    margin: 15px 0 18px 0;
+    padding-left: 19px;
+}
+
+    .management-list li {
+        margin-bottom: 5px;
+        font-size: 12px;
+        line-height: 1.4;
+        color: #455a64;
+    }
+
+
+/* =========================================================
+   MANAGE BUTTON
+   ========================================================= */
+
+.manage-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 18px;
+    color: #ffffff;
+    background: linear-gradient( 135deg, #1565c0, #2196f3 );
+    border-radius: 7px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+    box-shadow: 0 5px 12px rgba(25, 118, 210, 0.30);
+    transition: all 0.25s ease;
+}
+
+    .manage-button span {
+        font-size: 15px;
+        transition: transform 0.25s ease;
+    }
+
+    .manage-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 18px rgba(25, 118, 210, 0.40);
+    }
+
+        .manage-button:hover span {
+            transform: translateX(3px);
+        }
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.footer {
+    width: 100%;
+    margin-top: 50px;
+    padding: 20px 45px;
+    background: linear-gradient( 135deg, rgba(5, 18, 35, 0.97), rgba(12, 35, 61, 0.95) );
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    color: #d8eaff;
+    font-size: 12px;
+}
+
+.footer-content {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: #ffffff;
+}
+
+.footer-icon {
+    color: #64b5f6;
+    font-size: 18px;
+}
+
+.footer-center {
+    text-align: center;
+    color: #b9d4ec;
+}
+
+.footer-status {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    color: #b9d4ec;
+}
+
+.status-dot {
+    width: 9px;
+    height: 9px;
+    display: inline-block;
+    border-radius: 50%;
+    background: #4caf50;
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.75);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+/* Smaller desktop */
+
+@media (max-width: 1250px) {
+
+    .summary-container {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 12px;
+    }
+
+    .summary-card {
+        padding: 18px 10px;
+    }
+
+    .summary-value {
+        font-size: 30px;
+    }
+
+    .management-container {
+        gap: 15px;
+    }
+}
+
+
+/* Tablet */
+
+@media (max-width: 1000px) {
+
+    .header {
+        padding: 0 25px;
+    }
+
+    .stockflow-name {
+        font-size: 36px;
+        letter-spacing: 6px;
+    }
+
+    .date-box {
+        min-width: 160px;
+    }
+
+    .summary-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .management-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* Mobile */
+
+@media (max-width: 650px) {
+
+    .header {
+        height: auto;
+        min-height: 190px;
+        padding: 20px;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .admin-title {
+        width: 100%;
+        text-align: center;
+        border-left: none;
+        border-bottom: 3px solid #2196f3;
+        padding-left: 0;
+        padding-bottom: 8px;
+    }
+
+    .stockflow-brand {
+        position: static;
+        transform: none;
+    }
+
+    .stockflow-name {
+        font-size: 30px;
+        letter-spacing: 4px;
+    }
+
+    .stockflow-subtitle {
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
+
+    .date-box {
+        display: none;
+    }
+
+    .main-dashboard-link {
+        left: 20px;
+        bottom: -38px;
+    }
+
+    .page-content {
+        width: 92%;
+        margin-top: 55px;
+    }
+
+    .summary-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .management-container {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 12px;
+    }
+}

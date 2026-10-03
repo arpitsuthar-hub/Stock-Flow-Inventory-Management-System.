@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="logout.aspx.cs" Inherits="Invantory_Management_System.Logout" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Logout.aspx.cs" Inherits="Inventory_Management_System.Logout" %>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -123,7 +123,7 @@
                 ID="HyperLink1"
                 runat="server"
                 Text="Click Here To Login"
-                NavigateUrl="~/login.aspx"
+                NavigateUrl="~/Main_Dashboard.aspx"
                 CssClass="login-link">
             </asp:HyperLink>
         </div>

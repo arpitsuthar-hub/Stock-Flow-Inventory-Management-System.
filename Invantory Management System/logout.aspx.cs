@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Invantory_Management_System
+namespace Inventory_Management_System
 {
     public partial class Logout : System.Web.UI.Page
     {

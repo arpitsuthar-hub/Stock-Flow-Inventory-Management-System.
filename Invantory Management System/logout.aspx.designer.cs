@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Invantory_Management_System
+namespace Inventory_Management_System
 {
 
 

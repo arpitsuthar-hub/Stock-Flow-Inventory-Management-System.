@@ -1,0 +1,631 @@
+﻿/* =========================================================
+   SUPPLIER MANAGEMENT MODULE
+   Professional ERP / Inventory Management Style
+   ========================================================= */
+
+
+/* =========================================================
+   GLOBAL RESET
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #f5f5f5;
+    color: #222;
+}
+
+
+/* =========================================================
+   MAIN HEADER
+   ========================================================= */
+
+.supplier-header {
+    width: 100%;
+    height: 85px;
+    position:relative;
+    background: #111;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 35px;
+    border-bottom: 1px solid #292929;
+}
+
+.stock-flow-title {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 36px;
+    font-weight: 800;
+    color:#aaa;
+    letter-spacing: 1px;
+    white-space: nowrap;
+}
+/* =========================================================
+   BRAND
+   ========================================================= */
+
+.supplier-brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+    .supplier-brand h1{
+        color: aqua;
+        align-items:center;
+    }
+    /* =========================================================
+   BRAND ICON
+   ========================================================= */
+    .brand-icon {
+        width: 46px;
+        height: 46px;
+        background: #fff;
+        color: #111;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 21px;
+    }
+
+
+/* =========================================================
+   BRAND TEXT
+   ========================================================= */
+
+.brand-text h1 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #fff;
+    line-height: 1.2;
+    letter-spacing: 0.2px;
+}
+
+
+.brand-text span {
+    display: block;
+    margin-top: 4px;
+    color: #aaa;
+    font-size: 12px;
+    letter-spacing: 0.4px;
+}
+
+
+/* =========================================================
+   DATE SECTION
+   ========================================================= */
+
+.header-date {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    color: #fff;
+}
+
+
+/* =========================================================
+   CALENDAR ICON
+   ========================================================= */
+
+.date-icon {
+    width: 42px;
+    height: 42px;
+    border: 1px solid #444;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #fff;
+}
+
+
+/* =========================================================
+   DATE CONTENT
+   ========================================================= */
+
+.date-content {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+}
+
+
+.date-label {
+    font-size: 10px;
+    color: #999;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+}
+
+
+.current-date {
+    margin-top: 3px;
+    font-size: 13px;
+    color: #fff;
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   HORIZONTAL NAVBAR
+   ========================================================= */
+
+.supplier-navbar {
+    width: 100%;
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.05);
+}
+
+
+/* =========================================================
+   NAVBAR CONTAINER
+   ========================================================= */
+
+.navbar-container {
+    width: 100%;
+    min-height: 58px;
+    padding: 0 28px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    overflow-x: auto;
+}
+
+
+    /* =========================================================
+   REMOVE SCROLLBAR
+   ========================================================= */
+
+    .navbar-container::-webkit-scrollbar {
+        height: 0;
+    }
+
+
+/* =========================================================
+   NAVIGATION ITEMS
+   ========================================================= */
+
+.nav-item {
+    height: 58px;
+    padding: 0 17px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #444;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    white-space: nowrap;
+    border-bottom: 3px solid transparent;
+    transition: all 0.2s ease;
+}
+
+
+    /* =========================================================
+   NAVIGATION ICONS
+   ========================================================= */
+
+    .nav-item i {
+        font-size: 14px;
+        color: #555;
+        transition: all 0.2s ease;
+    }
+
+
+    /* =========================================================
+   HOVER
+   ========================================================= */
+
+    .nav-item:hover {
+        background: #f4f4f4;
+        color: #111;
+        border-bottom-color: #111;
+    }
+
+
+        .nav-item:hover i {
+            color: #111;
+        }
+
+
+/* =========================================================
+   BACK TO MAIN DASHBOARD
+   ========================================================= */
+
+.nav-back {
+    margin-left: auto;
+    border-left: 1px solid #ddd;
+    padding-left: 22px;
+    color: #555;
+}
+
+
+    .nav-back:hover {
+        background: #111;
+        color: #fff;
+        border-bottom-color: #111;
+    }
+
+
+        .nav-back:hover i {
+            color: #fff;
+        }
+
+
+/* =========================================================
+   PAGE CONTENT
+   ========================================================= */
+
+.supplier-content {
+    width: 100%;
+    min-height: calc(100vh - 140px);
+    padding: 28px 35px 40px;
+    background: #f5f5f5;
+}
+
+
+    /* =========================================================
+   COMMON PAGE CARD
+   ========================================================= */
+
+    .supplier-content .page-card {
+        width: 100%;
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 25px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+
+
+    /* =========================================================
+   PAGE TITLES
+   ========================================================= */
+
+    .supplier-content .page-title {
+        font-size: 22px;
+        font-weight: 600;
+        color: #171717;
+        margin-bottom: 6px;
+    }
+
+
+    .supplier-content .page-subtitle {
+        font-size: 13px;
+        color: #777;
+        margin-bottom: 22px;
+    }
+
+
+/* =========================================================
+   FORM STYLING
+   ========================================================= */
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+
+    .form-group label {
+        display: block;
+        margin-bottom: 7px;
+        font-size: 13px;
+        font-weight: 600;
+        color: #333;
+    }
+
+
+/* =========================================================
+   FORM CONTROL
+   ========================================================= */
+
+.form-control {
+    width: 100%;
+    height: 42px;
+    padding: 0 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #fff;
+    color: #222;
+    font-size: 13px;
+    outline: none;
+    transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+    /* =========================================================
+   FOCUS
+   ========================================================= */
+
+    .form-control:focus {
+        border-color: #111;
+        box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.08);
+    }
+
+
+/* =========================================================
+   READONLY
+   ========================================================= */
+
+.readonly-control {
+    background: #f2f2f2;
+    color: #666;
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.btn {
+    height: 40px;
+    padding: 0 18px;
+    border: none;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+
+/* =========================================================
+   PRIMARY BUTTON
+   ========================================================= */
+
+.btn-primary {
+    background: #111;
+    color: #fff;
+}
+
+
+    .btn-primary:hover {
+        background: #2b2b2b;
+        transform: translateY(-1px);
+    }
+
+
+/* =========================================================
+   SECONDARY BUTTON
+   ========================================================= */
+
+.btn-secondary {
+    background: #eee;
+    color: #222;
+    border: 1px solid #ccc;
+}
+
+
+    .btn-secondary:hover {
+        background: #ddd;
+    }
+
+
+/* =========================================================
+   DANGER BUTTON
+   ========================================================= */
+
+.btn-danger {
+    background: #222;
+    color: #fff;
+}
+
+
+    .btn-danger:hover {
+        background: #000;
+    }
+
+
+/* =========================================================
+   TABLE
+   ========================================================= */
+
+.supplier-content table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+}
+
+
+    /* =========================================================
+   TABLE HEADER
+   ========================================================= */
+
+    .supplier-content table th {
+        background: #111;
+        color: #fff;
+        padding: 12px 14px;
+        font-size: 12px;
+        font-weight: 600;
+        text-align: left;
+        white-space: nowrap;
+    }
+
+
+    /* =========================================================
+   TABLE DATA
+   ========================================================= */
+
+    .supplier-content table td {
+        padding: 11px 14px;
+        border-bottom: 1px solid #e2e2e2;
+        font-size: 13px;
+        color: #333;
+    }
+
+
+    /* =========================================================
+   TABLE HOVER
+   ========================================================= */
+
+    .supplier-content table tr:hover td {
+        background: #f7f7f7;
+    }
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.supplier-footer {
+    width: 100%;
+    min-height: 48px;
+    background: #111;
+    color: #aaa;
+    padding: 0 35px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 11px;
+    border-top: 1px solid #222;
+}
+
+
+    .supplier-footer div {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+    }
+
+
+    .supplier-footer i {
+        color: #fff;
+        font-size: 12px;
+    }
+
+
+/* =========================================================
+   RESPONSIVE DESIGN
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .supplier-header {
+        padding: 0 20px;
+    }
+
+
+    .navbar-container {
+        padding: 0 15px;
+    }
+
+
+    .supplier-content {
+        padding: 22px 20px 35px;
+    }
+
+
+    .nav-item {
+        padding: 0 13px;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .supplier-header {
+        height: auto;
+        min-height: 80px;
+        padding: 15px 18px;
+        gap: 15px;
+    }
+
+
+    .brand-text h1 {
+        font-size: 18px;
+    }
+
+
+    .brand-text span {
+        font-size: 10px;
+    }
+
+
+    .header-date {
+        display: none;
+    }
+
+
+    .supplier-footer {
+        padding: 12px 18px;
+        flex-direction: column;
+        gap: 7px;
+        text-align: center;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 500px) {
+
+    .supplier-header {
+        justify-content: center;
+        text-align: center;
+    }
+
+
+    .supplier-brand {
+        justify-content: center;
+    }
+
+
+    .brand-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 17px;
+    }
+
+
+    .brand-text h1 {
+        font-size: 17px;
+    }
+
+
+    .navbar-container {
+        padding: 0 8px;
+    }
+
+
+    .nav-item {
+        height: 52px;
+        padding: 0 12px;
+        font-size: 12px;
+    }
+
+
+        .nav-item i {
+            font-size: 13px;
+        }
+
+
+    .supplier-content {
+        padding: 18px 12px 30px;
+    }
+}

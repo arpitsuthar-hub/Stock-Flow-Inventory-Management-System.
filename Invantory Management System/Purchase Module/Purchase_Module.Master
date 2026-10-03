@@ -1,0 +1,241 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true"
+    CodeBehind="Purchase_Module.master.cs"
+    Inherits="Inventory_Management_System.Purchase_Module.Purchase_Module" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+
+    <meta charset="utf-8" />
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0" />
+
+    <title>Purchase Management</title>
+
+    <link href="../CSS/Purchase_Module.css?v=2" rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+    <asp:ContentPlaceHolder
+        ID="head"
+        runat="server">
+    </asp:ContentPlaceHolder>
+
+</head>
+
+<body>
+
+    <form id="form1" runat="server">
+
+        <!-- =========================================
+         PURCHASE HEADER
+    ========================================== -->
+
+        <header class="purchase-header">
+
+            <div class="purchase-brand">
+
+                <div class="brand-icon">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </div>
+
+                <div class="brand-text">
+
+                    <h1>Purchase Management</h1>
+
+                    <span>Inventory Management System
+                    </span>
+
+                </div>
+
+            </div>
+
+            <div class="stock-flow-title">
+                STOCK FLOW
+            </div>
+
+
+            <!-- DATE -->
+
+            <div class="header-date">
+
+                <div class="date-icon">
+                    <i class="fa-regular fa-calendar-days"></i>
+                </div>
+
+                <div class="date-content">
+
+                    <span class="date-label">TODAY
+                    </span>
+
+                    <asp:Label
+                        ID="lblDate"
+                        runat="server"
+                        CssClass="current-date">
+                    </asp:Label>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- =========================================
+         HORIZONTAL NAVIGATION
+    ========================================== -->
+
+        <nav class="purchase-navbar">
+
+            <div class="navbar-container">
+
+
+                <!-- DASHBOARD -->
+
+                <a href="Purchase_Dashboard.aspx"
+                    class="nav-item">
+
+                    <i class="fa-solid fa-house"></i>
+
+                    <span>Dashboard
+                    </span>
+
+                </a>
+
+
+                <!-- NEW PURCHASE -->
+
+                <a href="Purchase_AddNew.aspx"
+                    class="nav-item">
+
+                    <i class="fa-solid fa-cart-plus"></i>
+
+                    <span>New Purchase
+                    </span>
+
+                </a>
+
+
+                <!-- SEARCH PURCHASE -->
+
+                <a href="Purchase_Search.aspx"
+                    class="nav-item">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <span>Search Purchase
+                    </span>
+
+                </a>
+
+
+                <!-- ALL PURCHASES -->
+
+                <a href="AllPurchase.aspx"
+                    class="nav-item">
+
+                    <i class="fa-solid fa-list"></i>
+
+                    <span>All Purchases
+                    </span>
+
+                </a>
+
+
+                <!-- MAIN DASHBOARD -->
+
+                <a href="../Admin_Dashboard.aspx"
+                    class="nav-item nav-back">
+
+                    <i class="fa-solid fa-arrow-left"></i>
+
+                    <span>Admin Dashboard
+                    </span>
+
+                </a>
+
+            </div>
+
+        </nav>
+
+
+        <!-- =========================================
+         MAIN CONTENT
+    ========================================== -->
+
+        <main class="purchase-content">
+
+            <asp:ContentPlaceHolder
+                ID="ContentPlaceHolder1"
+                runat="server">
+            </asp:ContentPlaceHolder>
+
+        </main>
+
+
+        <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+        <footer class="purchase-footer">
+
+            <div>
+
+                <i class="fa-solid fa-boxes-stacked"></i>
+
+                <span>Inventory Management System
+                </span>
+
+            </div>
+
+            <div>
+                Purchase Management Module
+            </div>
+
+        </footer>
+
+
+        <!-- =========================================
+         CURRENT DATE
+    ========================================== -->
+
+        <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const dateLabel =
+                document.getElementById(
+                    '<%= lblDate.ClientID %>'
+                );
+
+            if (dateLabel) {
+
+                const today = new Date();
+
+                const options = {
+                    weekday: 'long',
+                    day: '2-digit',
+                    month: 'long',
+                    year: 'numeric'
+                };
+
+                dateLabel.textContent =
+                    today.toLocaleDateString(
+                        'en-IN',
+                        options
+                    );
+
+            }
+
+        });
+
+        </script>
+
+    </form>
+
+</body>
+</html>

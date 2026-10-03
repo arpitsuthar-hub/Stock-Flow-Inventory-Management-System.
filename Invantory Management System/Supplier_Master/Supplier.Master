@@ -1,0 +1,116 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true"
+    CodeBehind="Supplier.master.cs"
+    Inherits="Inventory_Management_System.Supplier_Master.Supplier" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Supplier Portal - Inventory Management System</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+    <!-- Supplier External CSS -->
+    <link href="../CSS/Supplier.css?v=2"
+        rel="stylesheet" />
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+</head>
+
+<body>
+
+    <form id="form1" runat="server">
+
+        <!-- HEADER -->
+
+        <header class="supplier-header">
+
+            <div class="supplier-logo">
+                <i class="fa-solid fa-boxes-stacked"></i>
+                <span>Inventory Management System</span>
+            </div>
+
+            <div class="supplier-user">
+
+                <div class="supplier-user-icon">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+
+                <span>Supplier Portal</span>
+
+            </div>
+
+        </header>
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="supplier-navbar">
+
+            <a href="SupplierMaster_Dashboard.aspx" class="supplier-nav-link">
+                <i class="fa-solid fa-gauge"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="Supplier_Profile.aspx" class="supplier-nav-link">
+                <i class="fa-solid fa-user"></i>
+                <span>My Profile</span>
+            </a>
+
+            <a href="Supplier_MySell.aspx" class="supplier-nav-link">
+                <i class="fa-solid fa-box"></i>
+                <span>My Sells</span>
+            </a>
+            <a href="Supplier_AddProduct.aspx" class="supplier-nav-link">
+                <i class="fa-solid fa-box"></i>
+                <span>Add Product</span>
+            </a>
+            <a href="Supplier_AllProducts.aspx" class="supplier-nav-link">
+                <i class="fa-solid fa-box"></i>
+                <span>My Product</span>
+            </a>
+
+            <asp:LinkButton ID="btnLogout"
+                runat="server"
+                CssClass="supplier-nav-link supplier-logout" OnClick="btnLogout_Click">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+
+            </asp:LinkButton>
+
+        </nav>
+
+
+        <!-- MAIN CONTENT -->
+
+        <main class="supplier-content">
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1"
+                runat="server">
+            </asp:ContentPlaceHolder>
+
+        </main>
+
+
+        <!-- FOOTER -->
+
+        <footer class="supplier-footer">
+            © 2026 Inventory Management System
+            <span>|</span>
+            Supplier Portal
+
+        </footer>
+
+    </form>
+
+</body>
+</html>

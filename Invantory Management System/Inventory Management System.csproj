@@ -1,0 +1,578 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{670EA675-980C-4E99-8FB5-FBB6374C8CC0}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Inventory_Management_System</RootNamespace>
+    <AssemblyName>Inventory Management System</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44387</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin_Dashboard.aspx" />
+    <Content Include="Admin_Dashboard.css" />
+    <Content Include="CSS\Customer_Module.css" />
+    <Content Include="CSS\Product_Module.css" />
+    <Content Include="CSS\Purchase_Module.css" />
+    <Content Include="CSS\Sell-Bill.css" />
+    <Content Include="CSS\Stock_Module.css" />
+    <Content Include="CSS\Supplier_Module.css" />
+    <Content Include="Customer_Module\Customer_Edit.aspx" />
+    <Content Include="Images\Admin.jpeg" />
+    <Content Include="Images\dark warehouse.jpg" />
+    <Content Include="Images\Login_Background.png" />
+    <Content Include="Images\light warehouse.jpg" />
+    <Content Include="Product_Module\Product_Edit.aspx" />
+    <Content Include="Purchase Module\AllPurchaseDetails.aspx" />
+    <Content Include="Purchase Module\Purchase_Invoice.aspx" />
+    <Content Include="Sell-Bill_Module\AllBills.aspx" />
+    <Content Include="Customer_Module\Customer_Dashboard.aspx" />
+    <Content Include="Customer_Module\AllCustomer.aspx" />
+    <Content Include="Purchase Module\AllPurchase.aspx" />
+    <Content Include="Sell-Bill_Module\AllSells.aspx" />
+    <Content Include="Sell-Bill_Module\Sell-Bill_Dashboard.aspx" />
+    <Content Include="Sell-Bill_Module\Sell_Invoice.aspx" />
+    <Content Include="Sell-Bill_Module\Sell_Search.aspx" />
+    <Content Include="Stock Module\AllStock.aspx" />
+    <Content Include="Product_Module\Product_AddNew.aspx" />
+    <Content Include="Product_Module\AllProduct.aspx" />
+    <Content Include="Product_Module\Product_Dashboard.aspx" />
+    <Content Include="Product_Module\Product_Search.aspx" />
+    <Content Include="Purchase Module\Purchase_Dashboard.aspx" />
+    <Content Include="Purchase Module\Purchase_Search.aspx" />
+    <Content Include="Stock Module\Stock_Current.aspx" />
+    <Content Include="Stock Module\Stock_In.aspx" />
+    <Content Include="Stock Module\Stock_Low.aspx" />
+    <Content Include="Stock Module\Stock_Out.aspx" />
+    <Content Include="Stock Module\Stock_Report.aspx" />
+    <Content Include="Stock Module\Stock_Dashboard.aspx" />
+    <Content Include="Supplier_Master\SupplierMaster_Dashboard.aspx" />
+    <Content Include="Supplier_Master\Supplier_AllProducts.aspx" />
+    <Content Include="Supplier_Master\Supplier_AddProduct.aspx" />
+    <Content Include="Supplier_Module\AllSupplier.aspx" />
+    <Content Include="CSS\Customer.css" />
+    <Content Include="Customer_Module\Customer_Details.aspx" />
+    <Content Include="Customer_Master\CustomerProfile.aspx" />
+    <Content Include="Customer_Master\Customer_MyPurchase.aspx" />
+    <Content Include="Links\store.jpeg" />
+    <Content Include="Login.aspx" />
+    <Content Include="Logout.aspx" />
+    <Content Include="Main_Dashboard.aspx" />
+    <Content Include="Main_Dashboard.css" />
+    <Content Include="Customer_Module\Customer_AddNew.aspx" />
+    <Content Include="Supplier_Module\Supplier_AddNew.aspx" />
+    <Content Include="Purchase Module\Purchase_AddNew.aspx" />
+    <Content Include="Customer_Module\Customer_Search.aspx" />
+    <Content Include="Supplier_Module\Supplier_Edit.aspx" />
+    <Content Include="Supplier_Module\Supplier_Search.aspx" />
+    <Content Include="Sell-Bill_Module\Sell_New.aspx" />
+    <Content Include="CSS\Supplier.css" />
+    <Content Include="Supplier_Module\Supplier_Details.aspx" />
+    <Content Include="Supplier_Master\Supplier_Profile.aspx" />
+    <Content Include="Supplier_Master\Supplier_MySell.aspx" />
+    <Content Include="Supplier_Module\Supplier_Dashboard.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin_Dashboard.aspx.cs">
+      <DependentUpon>Admin_Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_Dashboard.aspx.designer.cs">
+      <DependentUpon>Admin_Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer_Module\Customer_Edit.aspx.cs">
+      <DependentUpon>Customer_Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer_Module\Customer_Edit.aspx.designer.cs">
+      <DependentUpon>Customer_Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Product_Module\Product_Edit.aspx.cs">
+      <DependentUpon>Product_Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product_Module\Product_Edit.aspx.designer.cs">
+      <DependentUpon>Product_Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Purchase Module\AllPurchaseDetails.aspx.cs">
+      <DependentUpon>AllPurchaseDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Purchase Module\AllPurchaseDetails.aspx.designer.cs">
+      <DependentUpon>AllPurchaseDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Purchase Module\Purchase_Invoice.aspx.cs">
+      <DependentUpon>Purchase_Invoice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Purchase Module\Purchase_Invoice.aspx.designer.cs">
+      <DependentUpon>Purchase_Invoice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sell-Bill_Module\AllBills.aspx.cs">
+      <DependentUpon>AllBills.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sell-Bill_Module\AllBills.aspx.designer.cs">
+      <DependentUpon>AllBills.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer_Module\Customer_Dashboard.aspx.cs">
+      <DependentUpon>Customer_Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer_Module\Customer_Dashboard.aspx.designer.cs">
+      <DependentUpon>Customer_Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer_Module\Customer_Module.Master.cs">
+      <DependentUpon>Customer_Module.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer_Module\Customer_Module.Master.designer.cs">
+      <DependentUpon>Customer_Module.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Customer_Module\AllCustomer.aspx.cs">
+      <DependentUpon>AllCustomer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer_Module\AllCustomer.aspx.designer.cs">
+      <DependentUpon>AllCustomer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Purchase Module\AllPurchase.aspx.cs">
+      <DependentUpon>AllPurchase.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Purchase Module\AllPurchase.aspx.designer.cs">
+      <DependentUpon>AllPurchase.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sell-Bill_Module\AllSells.aspx.cs">
+      <DependentUpon>AllSells.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sell-Bill_Module\AllSells.aspx.designer.cs">
+      <DependentUpon>AllSells.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sell-Bill_Module\Sell-Bill_Module.Master.cs">
+      <DependentUpon>Sell-Bill_Module.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sell-Bill_Module\Sell-Bill_Module.Master.designer.cs">
+      <DependentUpon>Sell-Bill_Module.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Sell-Bill_Module\Sell-Bill_Dashboard.aspx.cs">
+      <DependentUpon>Sell-Bill_Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sell-Bill_Module\Sell-Bill_Dashboard.aspx.designer.cs">
+      <DependentUpon>Sell-Bill_Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sell-Bill_Module\Sell_Invoice.aspx.cs">
+      <DependentUpon>Sell_Invoice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sell-Bill_Module\Sell_Invoice.aspx.designer.cs">
+      <DependentUpon>Sell_Invoice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sell-Bill_Module\Sell_Search.aspx.cs">
+      <DependentUpon>Sell_Search.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sell-Bill_Module\Sell_Search.aspx.designer.cs">
+      <DependentUpon>Sell_Search.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Stock Module\AllStock.aspx.cs">
+      <DependentUpon>AllStock.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Stock Module\AllStock.aspx.designer.cs">
+      <DependentUpon>AllStock.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Product_Module\Product_AddNew.aspx.cs">
+      <DependentUpon>Product_AddNew.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product_Module\Product_AddNew.aspx.designer.cs">
+      <DependentUpon>Product_AddNew.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Product_Module\AllProduct.aspx.cs">
+      <DependentUpon>AllProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product_Module\AllProduct.aspx.designer.cs">
+      <DependentUpon>AllProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Product_Module\Product_Dashboard.aspx.cs">
+      <DependentUpon>Product_Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product_Module\Product_Dashboard.aspx.designer.cs">
+      <DependentUpon>Product_Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Product_Module\Product_Module.Master.cs">
+      <DependentUpon>Product_Module.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product_Module\Product_Module.Master.designer.cs">
+      <DependentUpon>Product_Module.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Product_Module\Product_Search.aspx.cs">
+      <DependentUpon>Product_Search.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product_Module\Product_Search.aspx.designer.cs">
+      <DependentUpon>Product_Search.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Purchase Module\Purchase_Dashboard.aspx.cs">
+      <DependentUpon>Purchase_Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Purchase Module\Purchase_Dashboard.aspx.designer.cs">
+      <DependentUpon>Purchase_Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Purchase Module\Purchase_Module.Master.cs">
+      <DependentUpon>Purchase_Module.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Purchase Module\Purchase_Module.Master.designer.cs">
+      <DependentUpon>Purchase_Module.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Purchase Module\Purchase_Search.aspx.cs">
+      <DependentUpon>Purchase_Search.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Purchase Module\Purchase_Search.aspx.designer.cs">
+      <DependentUpon>Purchase_Search.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Stock Module\Stock_Current.aspx.cs">
+      <DependentUpon>Stock_Current.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Stock Module\Stock_Current.aspx.designer.cs">
+      <DependentUpon>Stock_Current.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Stock Module\Stock_In.aspx.cs">
+      <DependentUpon>Stock_In.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Stock Module\Stock_In.aspx.designer.cs">
+      <DependentUpon>Stock_In.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Stock Module\Stock_Low.aspx.cs">
+      <DependentUpon>Stock_Low.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Stock Module\Stock_Low.aspx.designer.cs">
+      <DependentUpon>Stock_Low.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Stock Module\Stock_Out.aspx.cs">
+      <DependentUpon>Stock_Out.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Stock Module\Stock_Out.aspx.designer.cs">
+      <DependentUpon>Stock_Out.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Stock Module\Stock_Report.aspx.cs">
+      <DependentUpon>Stock_Report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Stock Module\Stock_Report.aspx.designer.cs">
+      <DependentUpon>Stock_Report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Stock Module\Stock_Dashboard.aspx.cs">
+      <DependentUpon>Stock_Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Stock Module\Stock_Dashboard.aspx.designer.cs">
+      <DependentUpon>Stock_Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Stock Module\Stock_Module.Master.cs">
+      <DependentUpon>Stock_Module.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Stock Module\Stock_Module.Master.designer.cs">
+      <DependentUpon>Stock_Module.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Supplier_Master\Supplier.Master.cs">
+      <DependentUpon>Supplier.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Supplier_Master\Supplier.Master.designer.cs">
+      <DependentUpon>Supplier.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Supplier_Master\SupplierMaster_Dashboard.aspx.cs">
+      <DependentUpon>SupplierMaster_Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Supplier_Master\SupplierMaster_Dashboard.aspx.designer.cs">
+      <DependentUpon>SupplierMaster_Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Supplier_Master\Supplier_AllProducts.aspx.cs">
+      <DependentUpon>Supplier_AllProducts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Supplier_Master\Supplier_AllProducts.aspx.designer.cs">
+      <DependentUpon>Supplier_AllProducts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Supplier_Master\Supplier_AddProduct.aspx.cs">
+      <DependentUpon>Supplier_AddProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Supplier_Master\Supplier_AddProduct.aspx.designer.cs">
+      <DependentUpon>Supplier_AddProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Supplier_Module\AllSupplier.aspx.cs">
+      <DependentUpon>AllSupplier.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Supplier_Module\AllSupplier.aspx.designer.cs">
+      <DependentUpon>AllSupplier.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer_Master\Customer.Master.cs">
+      <DependentUpon>Customer.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer_Master\Customer.Master.designer.cs">
+      <DependentUpon>Customer.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Customer_Module\Customer_Details.aspx.cs">
+      <DependentUpon>Customer_Details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer_Module\Customer_Details.aspx.designer.cs">
+      <DependentUpon>Customer_Details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer_Master\CustomerProfile.aspx.cs">
+      <DependentUpon>CustomerProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer_Master\CustomerProfile.aspx.designer.cs">
+      <DependentUpon>CustomerProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer_Master\Customer_MyPurchase.aspx.cs">
+      <DependentUpon>Customer_MyPurchase.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer_Master\Customer_MyPurchase.aspx.designer.cs">
+      <DependentUpon>Customer_MyPurchase.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Main_Dashboard.aspx.cs">
+      <DependentUpon>Main_Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Main_Dashboard.aspx.designer.cs">
+      <DependentUpon>Main_Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer_Module\Customer_AddNew.aspx.cs">
+      <DependentUpon>Customer_AddNew.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer_Module\Customer_AddNew.aspx.designer.cs">
+      <DependentUpon>Customer_AddNew.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Supplier_Module\Supplier_AddNew.aspx.cs">
+      <DependentUpon>Supplier_AddNew.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Supplier_Module\Supplier_AddNew.aspx.designer.cs">
+      <DependentUpon>Supplier_AddNew.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Purchase Module\Purchase_AddNew.aspx.cs">
+      <DependentUpon>Purchase_AddNew.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Purchase Module\Purchase_AddNew.aspx.designer.cs">
+      <DependentUpon>Purchase_AddNew.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer_Module\Customer_Search.aspx.cs">
+      <DependentUpon>Customer_Search.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer_Module\Customer_Search.aspx.designer.cs">
+      <DependentUpon>Customer_Search.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Supplier_Module\Supplier_Edit.aspx.cs">
+      <DependentUpon>Supplier_Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Supplier_Module\Supplier_Edit.aspx.designer.cs">
+      <DependentUpon>Supplier_Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Supplier_Module\Supplier_Search.aspx.cs">
+      <DependentUpon>Supplier_Search.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Supplier_Module\Supplier_Search.aspx.designer.cs">
+      <DependentUpon>Supplier_Search.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sell-Bill_Module\Sell_New.aspx.cs">
+      <DependentUpon>Sell_New.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sell-Bill_Module\Sell_New.aspx.designer.cs">
+      <DependentUpon>Sell_New.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Supplier_Module\Supplier_Details.aspx.cs">
+      <DependentUpon>Supplier_Details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Supplier_Module\Supplier_Details.aspx.designer.cs">
+      <DependentUpon>Supplier_Details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Supplier_Master\Supplier_Profile.aspx.cs">
+      <DependentUpon>Supplier_Profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Supplier_Master\Supplier_Profile.aspx.designer.cs">
+      <DependentUpon>Supplier_Profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Supplier_Module\Supplier_Dashboard.aspx.cs">
+      <DependentUpon>Supplier_Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Supplier_Module\Supplier_Dashboard.aspx.designer.cs">
+      <DependentUpon>Supplier_Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Supplier_Module\Supplier_Module.Master.cs">
+      <DependentUpon>Supplier_Module.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Supplier_Module\Supplier_Module.Master.designer.cs">
+      <DependentUpon>Supplier_Module.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Supplier_Master\Supplier_MySell.aspx.cs">
+      <DependentUpon>Supplier_MySell.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Supplier_Master\Supplier_MySell.aspx.designer.cs">
+      <DependentUpon>Supplier_MySell.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Customer_Master\Customer.Master" />
+    <Content Include="Customer_Module\Customer_Module.Master" />
+    <None Include="packages.config" />
+    <Content Include="Supplier_Module\Supplier_Module.Master" />
+    <Content Include="Supplier_Master\Supplier.Master" />
+    <Content Include="Product_Module\Product_Module.Master" />
+    <Content Include="Purchase Module\Purchase_Module.Master" />
+    <Content Include="Stock Module\Stock_Module.Master" />
+    <Content Include="Sell-Bill_Module\Sell-Bill_Module.Master" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>53114</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44387/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+</Project>
