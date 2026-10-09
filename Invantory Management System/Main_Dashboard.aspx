@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true"
+<%@ Page Language="C#" AutoEventWireup="true"
     CodeBehind="Main_Dashboard.aspx.cs"
     Inherits="Inventory_Management_System.Main_Dashboard" %>
 
