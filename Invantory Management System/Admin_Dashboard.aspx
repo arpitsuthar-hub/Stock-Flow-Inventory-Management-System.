@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true"
+<%@ Page Language="C#" AutoEventWireup="true"
     CodeBehind="Admin_Dashboard.aspx.cs"
     Inherits="Inventory_Management_System.Admin_Dashboard" %>
 
@@ -314,6 +314,47 @@
 
                     <div class="management-container">
 
+                                                <!-- =================================================
+     PRODUCT
+================================================== -->
+
+<div class="management-card">
+
+    <div class="module-header">
+
+        <div class="module-icon">
+            ▦
+        </div>
+
+        <span class="module-number">01
+        </span>
+
+    </div>
+
+    <h3>Product Management
+    </h3>
+
+    <p class="description">
+        Manage products, categories and product information.
+    </p>
+
+    <ul class="management-list">
+
+        <li>Product Dashboard</li>
+        <li>Add New Product</li>
+        <li>Search Product</li>
+        <li>View All Products</li>
+        <li>Edit Product</li>
+
+    </ul>
+
+    <a href="Product_Module/Product_Dashboard.aspx"
+        class="manage-button">Open Module
+        <span>→</span>
+    </a>
+
+</div>
+
                         <!-- =================================================
       SUPPLIER
  ================================================== -->
@@ -354,46 +395,7 @@
                             </a>
 
                         </div>
-                        <!-- =================================================
-                             PRODUCT
-                        ================================================== -->
-
-                        <div class="management-card">
-
-                            <div class="module-header">
-
-                                <div class="module-icon">
-                                    ▦
-                                </div>
-
-                                <span class="module-number">01
-                                </span>
-
-                            </div>
-
-                            <h3>Product Management
-                            </h3>
-
-                            <p class="description">
-                                Manage products, categories and product information.
-                            </p>
-
-                            <ul class="management-list">
-
-                                <li>Product Dashboard</li>
-                                <li>Add New Product</li>
-                                <li>Search Product</li>
-                                <li>View All Products</li>
-                                <li>Edit Product</li>
-
-                            </ul>
-
-                            <a href="Product_Module/Product_Dashboard.aspx"
-                                class="manage-button">Open Module
-                                <span>→</span>
-                            </a>
-
-                        </div>
+                        
 
 
                         <!-- =================================================
@@ -408,7 +410,7 @@
                                     +
                                 </div>
 
-                                <span class="module-number">04
+                                <span class="module-number">03
                                 </span>
 
                             </div>
@@ -450,7 +452,7 @@
                                     ◉
                                 </div>
 
-                                <span class="module-number">03
+                                <span class="module-number">04
                                 </span>
 
                             </div>
@@ -492,7 +494,7 @@
                                     #
                                 </div>
 
-                                <span class="module-number">06
+                                <span class="module-number">05
                                 </span>
 
                             </div>
@@ -535,7 +537,7 @@
                                     ▤
                                 </div>
 
-                                <span class="module-number">05
+                                <span class="module-number">06
                                 </span>
 
                             </div>
