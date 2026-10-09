@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Add New Supplier"
+<%@ Page Title="Add New Supplier"
     Language="C#"
     MasterPageFile="~/Supplier_Module/Supplier_Module.Master"
     AutoEventWireup="true"
