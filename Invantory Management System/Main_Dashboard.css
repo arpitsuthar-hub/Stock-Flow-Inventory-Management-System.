@@ -1,4 +1,4 @@
-﻿/* =========================================
+/* =========================================
    ROOT COLORS
 ========================================= */
 
@@ -38,7 +38,7 @@ html,
 body {
     width: 100%;
     min-height: 100vh;
-    background: linear-gradient( rgba(4, 12, 22, 0.80), rgba(4, 12, 22, 0.88) ), url('../Images/dark warehouse.jpg');
+    background: linear-gradient( rgba(4, 12, 22, 0.80), rgba(4, 12, 22, 0.88) ), url('../Images/Dark_Warehouse.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
