@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Add New Customer"
+<%@ Page Title="Add New Customer"
     Language="C#"
     MasterPageFile="~/Customer_Module/Customer_Module.Master"
     AutoEventWireup="true"
@@ -973,6 +973,7 @@ input[type="number"].customer-form-control::-webkit-outer-spin-button {
         font-size: 12px;
     }
 }
+
 
     </style>
 
