@@ -1,24 +1,28 @@
-<%@ Page Title="" Language="C#" MasterPageFile="~/Stock Module/Stock_Module.Master"
+<%@ Page Title="Stock Management" Language="C#"
+    MasterPageFile="~/Stock Module/Stock_Module.Master"
     AutoEventWireup="true"
     CodeBehind="Stock_Dashboard.aspx.cs"
     Inherits="Inventory_Management_System.Stock_Module.Stock_Dashboard" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
     <style>
 
         /* =========================================
-       RESET
-    ========================================= */
+           RESET
+        ========================================= */
 
         * {
             box-sizing: border-box;
         }
 
-
         /* =========================================
-       DASHBOARD
-    ========================================= */
+           DASHBOARD
+        ========================================= */
 
         .dashboard {
             width: 100%;
@@ -27,106 +31,149 @@
             color: #14213d;
         }
 
-
         /* =========================================
-       HEADER
-    ========================================= */
+           HEADER
+        ========================================= */
 
         .dashboard-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 30px;
+            gap: 20px;
         }
 
-            .dashboard-header h1 {
-                margin: 0 0 6px;
-                font-size: 30px;
-            }
+        .dashboard-header h1 {
+            margin: 0 0 6px;
+            font-size: 30px;
+            font-weight: 700;
+            color: #14213d;
+        }
 
-            .dashboard-header p {
-                margin: 0;
-                color: #718096;
-                font-size: 15px;
-            }
+        .dashboard-header p {
+            margin: 0;
+            color: #718096;
+            font-size: 15px;
+        }
+
+        /* =========================================
+           DATE BOX
+        ========================================= */
 
         .date-box {
             background: white;
             border: 1px solid #e5e7eb;
             border-radius: 10px;
-            padding: 12px 18px;
+            padding: 12px 20px;
             text-align: right;
+            min-width: 125px;
         }
 
-            .date-box span {
-                display: block;
-                font-size: 12px;
-                color: #718096;
-                margin-bottom: 4px;
-            }
+        .date-box span {
+            display: block;
+            font-size: 12px;
+            color: #718096;
+            margin-bottom: 5px;
+        }
 
-            .date-box strong {
-                font-size: 14px;
-            }
-
+        .date-box strong {
+            font-size: 14px;
+            color: #14213d;
+        }
 
         /* =========================================
-       STATISTICS
-    ========================================= */
+           STATISTICS CONTAINER
+        ========================================= */
 
         .stats-container {
-            display: flex;
-            justify-content: center;
-            align-items: stretch;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
             gap: 22px;
             margin-bottom: 25px;
             width: 100%;
         }
 
+        /* =========================================
+           STATISTICS CARDS
+        ========================================= */
+
         .stat-card {
-            width: 100%;
-            min-height: 135px;
+            min-height: 145px;
             background: white;
             border: 1px solid #e5e7eb;
             border-radius: 12px;
             padding: 28px 30px;
+
             display: flex;
             align-items: center;
-            justify-content: flex-start;
             gap: 20px;
-            text-align: left;
-            flex: 1;
+
+            transition: 0.3s ease;
         }
 
+        .stat-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        /* =========================================
+           STATISTICS ICONS
+        ========================================= */
+
         .stat-icon {
-            width: 58px;
-            height: 58px;
-            min-width: 58px;
-            border-radius: 10px;
-            background: #f1f5f9;
+            width: 60px;
+            height: 60px;
+            min-width: 60px;
+
+            border-radius: 12px;
+
             display: flex;
             align-items: center;
             justify-content: center;
+
             font-size: 25px;
         }
 
-        .stat-card span {
+        .products-icon {
+            background: #eff6ff;
+            color: #2563eb;
+        }
+
+        .stock-icon {
+            background: #ecfdf5;
+            color: #059669;
+        }
+
+        .low-stock-icon {
+            background: #fff7ed;
+            color: #ea580c;
+        }
+
+        /* =========================================
+           STATISTICS TEXT
+        ========================================= */
+
+        .stat-info {
+            flex: 1;
+        }
+
+        .stat-info span {
             display: block;
             color: #718096;
             font-size: 14px;
-            margin-bottom: 6px;
+            margin-bottom: 8px;
         }
 
-        .stat-card h2 {
+        .stat-info h2 {
             margin: 0;
             font-size: 30px;
+            font-weight: 700;
             color: #14213d;
         }
 
-
         /* =========================================
-       MAIN GRID
-    ========================================= */
+           MAIN GRID
+        ========================================= */
 
         .dashboard-grid {
             display: grid;
@@ -134,36 +181,40 @@
             gap: 22px;
         }
 
-
         /* =========================================
-       CARD
-    ========================================= */
+           DASHBOARD CARDS
+        ========================================= */
 
         .dashboard-card {
             background: white;
             border: 1px solid #e5e7eb;
             border-radius: 12px;
-            padding: 24px;
+            padding: 25px;
         }
+
+        /* =========================================
+           CARD HEADER
+        ========================================= */
 
         .card-header {
             margin-bottom: 22px;
         }
 
-            .card-header h3 {
-                margin: 0 0 5px;
-                font-size: 19px;
-            }
+        .card-header h3 {
+            margin: 0 0 7px;
+            font-size: 19px;
+            font-weight: 700;
+            color: #14213d;
+        }
 
-            .card-header span {
-                color: #718096;
-                font-size: 13px;
-            }
-
+        .card-header span {
+            color: #718096;
+            font-size: 13px;
+        }
 
         /* =========================================
-       STOCK OVERVIEW
-    ========================================= */
+           STOCK OVERVIEW
+        ========================================= */
 
         .stock-overview {
             display: grid;
@@ -171,114 +222,237 @@
             gap: 12px;
         }
 
+        /* =========================================
+           OVERVIEW ITEMS
+        ========================================= */
+
         .overview-item {
             background: #f8fafc;
-            padding: 20px;
-            border-radius: 9px;
+            padding: 22px 12px;
+            border-radius: 10px;
             text-align: center;
+            transition: 0.3s;
         }
 
-            .overview-item span {
-                display: block;
-                font-size: 13px;
-                color: #718096;
-                margin-bottom: 8px;
-            }
+        .overview-item:hover {
+            background: #f1f5f9;
+        }
 
-            .overview-item strong {
-                font-size: 25px;
-            }
+        .overview-icon {
+            font-size: 23px;
+            margin-bottom: 12px;
+        }
 
+        .overview-item span {
+            display: block;
+            font-size: 13px;
+            color: #718096;
+            margin-bottom: 10px;
+        }
+
+        .overview-item strong {
+            display: block;
+            font-size: 26px;
+            font-weight: 700;
+            color: #14213d;
+        }
 
         /* =========================================
-       QUICK ACTIONS
-    ========================================= */
+           OVERVIEW ICON COLORS
+        ========================================= */
+
+        .in-stock-color {
+            color: #16a34a;
+        }
+
+        .low-stock-color {
+            color: #f59e0b;
+        }
+
+        .out-stock-color {
+            color: #dc2626;
+        }
+
+        /* =========================================
+           QUICK ACTIONS
+        ========================================= */
 
         .quick-actions {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 12px;
         }
+
+        /* =========================================
+           ACTION BUTTONS
+        ========================================= */
 
         .action-btn {
             text-decoration: none;
             color: #14213d;
+
             display: flex;
             align-items: center;
-            gap: 14px;
-            padding: 14px;
-            border-radius: 9px;
+            gap: 15px;
+
+            padding: 15px;
+            border-radius: 10px;
+
             background: #f8fafc;
-            transition: 0.2s;
+            border: 1px solid transparent;
+
+            transition: 0.3s ease;
         }
 
-            .action-btn:hover {
-                background: #eef2f7;
-            }
-
-            .action-btn > span {
-                font-size: 21px;
-            }
-
-            .action-btn strong {
-                display: block;
-                font-size: 14px;
-                margin-bottom: 3px;
-            }
-
-            .action-btn small {
-                color: #718096;
-                font-size: 12px;
-            }
-
+        .action-btn:hover {
+            background: #eff6ff;
+            border-color: #dbeafe;
+            transform: translateX(3px);
+        }
 
         /* =========================================
-       WELCOME
-    ========================================= */
+           ACTION ICONS
+        ========================================= */
+
+        .action-icon {
+            width: 45px;
+            height: 45px;
+            min-width: 45px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 10px;
+            font-size: 20px;
+        }
+
+        .action-blue {
+            background: #dbeafe;
+            color: #2563eb;
+        }
+
+        .action-orange {
+            background: #ffedd5;
+            color: #ea580c;
+        }
+
+        .action-green {
+            background: #dcfce7;
+            color: #16a34a;
+        }
+
+        /* =========================================
+           ACTION TEXT
+        ========================================= */
+
+        .action-info {
+            flex: 1;
+        }
+
+        .action-info strong {
+            display: block;
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .action-info small {
+            display: block;
+            color: #718096;
+            font-size: 12px;
+        }
+
+        /* =========================================
+           ACTION ARROW
+        ========================================= */
+
+        .action-arrow {
+            color: #94a3b8;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .action-btn:hover .action-arrow {
+            color: #2563eb;
+            transform: translateX(3px);
+        }
+
+        /* =========================================
+           WELCOME CARD
+        ========================================= */
 
         .welcome-card {
             margin-top: 22px;
+
             background: white;
             border: 1px solid #e5e7eb;
             border-radius: 12px;
+
             padding: 25px;
+
             display: flex;
             justify-content: space-between;
             align-items: center;
+
+            gap: 20px;
         }
 
-            .welcome-card h2 {
-                margin: 0 0 7px;
-                font-size: 20px;
-            }
+        .welcome-card h2 {
+            margin: 0 0 8px;
+            font-size: 20px;
+            font-weight: 700;
+            color: #14213d;
+        }
 
-            .welcome-card p {
-                margin: 0;
-                color: #718096;
-                font-size: 14px;
-            }
-
-            .welcome-card a {
-                text-decoration: none;
-                color: #14213d;
-                font-weight: bold;
-                font-size: 14px;
-            }
-
+        .welcome-card p {
+            margin: 0;
+            color: #718096;
+            font-size: 14px;
+            line-height: 1.7;
+        }
 
         /* =========================================
-       RESPONSIVE
-    ========================================= */
+           WELCOME BUTTON
+        ========================================= */
 
-        @media (max-width: 900px) {
+        .welcome-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+
+            background: #14213d;
+            color: white;
+
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+
+            padding: 13px 20px;
+            border-radius: 8px;
+
+            white-space: nowrap;
+            transition: 0.3s;
+        }
+
+        .welcome-btn:hover {
+            background: #2563eb;
+            color: white;
+        }
+
+        /* =========================================
+           RESPONSIVE - TABLET
+        ========================================= */
+
+        @media (max-width: 1100px) {
 
             .stats-container {
-                flex-wrap: wrap;
-                justify-content: center;
+                gap: 15px;
             }
 
             .stat-card {
-                flex: 1 1 45%;
+                padding: 20px;
             }
 
             .dashboard-grid {
@@ -286,8 +460,11 @@
             }
         }
 
+        /* =========================================
+           RESPONSIVE - MOBILE
+        ========================================= */
 
-        @media (max-width: 600px) {
+        @media (max-width: 700px) {
 
             .dashboard {
                 padding: 20px;
@@ -299,38 +476,60 @@
                 gap: 15px;
             }
 
+            .dashboard-header h1 {
+                font-size: 25px;
+            }
+
+            .date-box {
+                text-align: left;
+            }
+
             .stats-container {
-                flex-direction: column;
-                align-items: center;
+                grid-template-columns: 1fr;
+                gap: 15px;
             }
 
             .stat-card {
-                width: 100%;
-                max-width: none;
-                min-height: 120px;
+                min-height: 110px;
+                padding: 20px;
+            }
+
+            .stat-info h2 {
+                font-size: 27px;
             }
 
             .stock-overview {
                 grid-template-columns: 1fr;
             }
 
+            .dashboard-card {
+                padding: 20px;
+            }
+
             .welcome-card {
                 flex-direction: column;
                 align-items: flex-start;
-                gap: 15px;
+            }
+
+            .welcome-btn {
+                width: 100%;
             }
         }
+
     </style>
 
 </asp:Content>
 
 
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+<asp:Content ID="Content2"
+    ContentPlaceHolderID="ContentPlaceHolder1"
+    runat="server">
 
     <div class="dashboard">
 
-
-        <!-- Header -->
+        <!-- =====================================
+             DASHBOARD HEADER
+        ====================================== -->
 
         <div class="dashboard-header">
 
@@ -343,7 +542,6 @@
                 </p>
 
             </div>
-
 
             <div class="date-box">
 
@@ -358,33 +556,30 @@
         </div>
 
 
-
-        <!-- Statistics -->
+        <!-- =====================================
+             STATISTICS
+        ====================================== -->
 
         <div class="stats-container">
 
-
-            <!-- Total Products -->
+            <!-- TOTAL PRODUCTS -->
 
             <div class="stat-card">
 
-                <div class="stat-icon">
-                    📦
+                <div class="stat-icon products-icon">
+                    <i class="fa-solid fa-box"></i>
                 </div>
 
-                <div>
+                <div class="stat-info">
 
-                    <span>Total Products
-                    </span>
+                    <span>Total Products</span>
 
                     <h2>
-
                         <asp:Label
                             ID="lblTotalProducts"
                             runat="server"
                             Text="0">
                         </asp:Label>
-
                     </h2>
 
                 </div>
@@ -392,28 +587,24 @@
             </div>
 
 
-
-            <!-- Total Stock -->
+            <!-- TOTAL STOCK -->
 
             <div class="stat-card">
 
-                <div class="stat-icon">
-                    📊
+                <div class="stat-icon stock-icon">
+                    <i class="fa-solid fa-boxes-stacked"></i>
                 </div>
 
-                <div>
+                <div class="stat-info">
 
-                    <span>Total Stock
-                    </span>
+                    <span>Total Stock</span>
 
                     <h2>
-
                         <asp:Label
                             ID="lblTotalStock"
                             runat="server"
                             Text="0">
                         </asp:Label>
-
                     </h2>
 
                 </div>
@@ -421,28 +612,24 @@
             </div>
 
 
-
-            <!-- Total Low Stock -->
+            <!-- TOTAL LOW STOCK -->
 
             <div class="stat-card">
 
-                <div class="stat-icon">
-                    ⚠️
+                <div class="stat-icon low-stock-icon">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
                 </div>
 
-                <div>
+                <div class="stat-info">
 
-                    <span>Total Low Stock
-                    </span>
+                    <span>Total Low Stock</span>
 
                     <h2>
-
                         <asp:Label
                             ID="lblTotalLowStock"
                             runat="server"
                             Text="0">
                         </asp:Label>
-
                     </h2>
 
                 </div>
@@ -452,165 +639,176 @@
         </div>
 
 
-
-        <!-- Main Content -->
+        <!-- =====================================
+             MAIN DASHBOARD GRID
+        ====================================== -->
 
         <div class="dashboard-grid">
 
-
-            <!-- Stock Overview -->
+            <!-- STOCK OVERVIEW -->
 
             <div class="dashboard-card">
 
                 <div class="card-header">
 
-                    <h3>Stock Overview
-                    </h3>
+                    <h3>Stock Overview</h3>
 
-                    <span>Current inventory status
-                    </span>
+                    <span>Current inventory status</span>
 
                 </div>
 
-
                 <div class="stock-overview">
 
+                    <!-- IN STOCK -->
 
                     <div class="overview-item">
 
-                        <span>In Stock
-                        </span>
+                        <div class="overview-icon in-stock-color">
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+
+                        <span>In Stock</span>
 
                         <strong>
-
                             <asp:Label
                                 ID="lblInStock"
                                 runat="server"
                                 Text="0">
                             </asp:Label>
-
                         </strong>
 
                     </div>
 
 
+                    <!-- LOW STOCK -->
 
                     <div class="overview-item">
 
-                        <span>Low Stock
-                        </span>
+                        <div class="overview-icon low-stock-color">
+                            <i class="fa-solid fa-arrow-trend-down"></i>
+                        </div>
+
+                        <span>Low Stock</span>
 
                         <strong>
-
                             <asp:Label
                                 ID="lblOverviewLowStock"
                                 runat="server"
                                 Text="0">
                             </asp:Label>
-
                         </strong>
 
                     </div>
 
 
+                    <!-- OUT OF STOCK -->
 
                     <div class="overview-item">
 
-                        <span>Out of Stock
-                        </span>
+                        <div class="overview-icon out-stock-color">
+                            <i class="fa-solid fa-circle-xmark"></i>
+                        </div>
+
+                        <span>Out of Stock</span>
 
                         <strong>
-
                             <asp:Label
                                 ID="lblOutOfStock"
                                 runat="server"
                                 Text="0">
                             </asp:Label>
-
                         </strong>
 
                     </div>
-
 
                 </div>
 
             </div>
 
 
-
-            <!-- Quick Actions -->
+            <!-- =================================
+                 QUICK ACTIONS
+            ================================== -->
 
             <div class="dashboard-card">
 
                 <div class="card-header">
 
-                    <h3>Quick Actions
-                    </h3>
+                    <h3>Quick Actions</h3>
 
-                    <span>Monitor and manage stock
-                    </span>
+                    <span>Monitor and manage stock</span>
 
                 </div>
 
-
                 <div class="quick-actions">
 
+                    <!-- VIEW ALL STOCK -->
 
                     <a href="AllStock.aspx" class="action-btn">
 
-                        <span>📦
-                        </span>
+                        <div class="action-icon action-blue">
+                            <i class="fa-solid fa-warehouse"></i>
+                        </div>
 
-                        <div>
+                        <div class="action-info">
 
-                            <strong>View All Stock
-                            </strong>
+                            <strong>View All Stock</strong>
 
-                            <small>Check current available inventory
+                            <small>
+                                Check current available inventory
                             </small>
 
                         </div>
 
+                        <i class="fa-solid fa-chevron-right action-arrow"></i>
+
                     </a>
 
 
+                    <!-- LOW STOCK PRODUCTS -->
 
                     <a href="Stock_Low.aspx" class="action-btn">
 
-                        <span>⚠️
-                        </span>
+                        <div class="action-icon action-orange">
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+                        </div>
 
-                        <div>
+                        <div class="action-info">
 
-                            <strong>Low Stock Products
-                            </strong>
+                            <strong>Low Stock Products</strong>
 
-                            <small>Monitor products that need restocking
+                            <small>
+                                Monitor products that need restocking
                             </small>
 
                         </div>
 
+                        <i class="fa-solid fa-chevron-right action-arrow"></i>
+
                     </a>
 
 
+                    <!-- STOCK REPORT -->
 
                     <a href="Stock_Report.aspx" class="action-btn">
 
-                        <span>📊
-                        </span>
+                        <div class="action-icon action-green">
+                            <i class="fa-solid fa-chart-column"></i>
+                        </div>
 
-                        <div>
+                        <div class="action-info">
 
-                            <strong>Stock Report
-                            </strong>
+                            <strong>Stock Report</strong>
 
-                            <small>View detailed inventory reports
+                            <small>
+                                View detailed inventory reports
                             </small>
 
                         </div>
 
-                    </a>
+                        <i class="fa-solid fa-chevron-right action-arrow"></i>
 
+                    </a>
 
                 </div>
 
@@ -619,31 +817,39 @@
         </div>
 
 
-
-        <!-- Bottom Welcome -->
+        <!-- =====================================
+             STOCK CONTROL CENTER
+        ====================================== -->
 
         <div class="welcome-card">
 
             <div>
 
-                <h2>Stock Control Center
+                <h2>
+                    <i class="fa-solid fa-clipboard-list"
+                        style="color: #2563eb; margin-right: 8px;">
+                    </i>
+
+                    Stock Control Center
                 </h2>
 
                 <p>
                     Keep track of your products, monitor stock levels,
-                identify low stock items, and manage inventory efficiently.
+                    identify low stock items, and manage inventory efficiently.
                 </p>
 
             </div>
 
+            <a href="AllStock.aspx" class="welcome-btn">
 
-            <a href="AllStock.aspx">View Stock →
+                View Stock
+
+                <i class="fa-solid fa-arrow-right"></i>
+
             </a>
 
         </div>
 
-
     </div>
 
 </asp:Content>
-
