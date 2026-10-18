@@ -1,3 +1,4 @@
+
 <%@ Page Title="New Sale"
     Language="C#"
     MasterPageFile="~/Sell-Bill_Module/Sell-Bill_Module.Master"
@@ -19,7 +20,6 @@
             box-sizing: border-box;
         }
 
-
         /* =========================================================
            MAIN CONTAINER
            ========================================================= */
@@ -29,7 +29,6 @@
             margin: 25px auto;
             font-family: "Segoe UI", Arial, sans-serif;
         }
-
 
         /* =========================================================
            PAGE TITLE
@@ -41,7 +40,6 @@
             margin-bottom: 22px;
             color: #222;
         }
-
 
         /* =========================================================
            CARD
@@ -55,14 +53,12 @@
             box-shadow: 0 3px 12px rgba(0,0,0,0.08);
         }
 
-
         .card-title {
             font-size: 20px;
             font-weight: 600;
             margin-bottom: 18px;
             color: #333;
         }
-
 
         /* =========================================================
            FORM ROW
@@ -74,12 +70,10 @@
             gap: 18px;
         }
 
-
         .form-group {
             display: flex;
             flex-direction: column;
         }
-
 
         .form-group label {
             font-weight: 600;
@@ -87,7 +81,6 @@
             color: #444;
             font-size: 14px;
         }
-
 
         .form-control,
         .item-input {
@@ -101,17 +94,14 @@
             background: #fff;
         }
 
-
         .form-control:focus,
         .item-input:focus {
             border-color: #333;
         }
 
-
         .readonly-box {
             background: #f3f3f3;
         }
-
 
         /* =========================================================
            CUSTOMER INFORMATION
@@ -124,7 +114,6 @@
             margin-top: 20px;
         }
 
-
         .info-box {
             background: #f7f7f7;
             border-radius: 7px;
@@ -133,13 +122,11 @@
             min-height: 70px;
         }
 
-
         .info-title {
             font-size: 12px;
             color: #777;
             margin-bottom: 5px;
         }
-
 
         .info-value {
             font-size: 15px;
@@ -147,7 +134,6 @@
             color: #222;
             word-break: break-word;
         }
-
 
         /* =========================================================
            SALE ITEMS TABLE
@@ -158,13 +144,11 @@
             overflow-x: auto;
         }
 
-
         .sale-table {
             width: 100%;
             border-collapse: collapse;
             min-width: 1250px;
         }
-
 
         .sale-table th {
             background: #222;
@@ -175,19 +159,16 @@
             white-space: nowrap;
         }
 
-
         .sale-table td {
             padding: 8px;
             border-bottom: 1px solid #ddd;
             vertical-align: middle;
         }
 
-
         .sale-table td:first-child {
             text-align: center;
             font-weight: 600;
         }
-
 
         /* =========================================================
            TABLE INPUTS
@@ -197,27 +178,22 @@
             min-width: 230px;
         }
 
-
         .brand-select {
             min-width: 160px;
         }
-
 
         .price-input {
             background: #f3f3f3;
             font-weight: 600;
         }
 
-
         .qty-input {
             min-width: 90px;
         }
 
-
         .discount-input {
             min-width: 110px;
         }
-
 
         /* =========================================================
            CALCULATED VALUES
@@ -235,12 +211,10 @@
             white-space: nowrap;
         }
 
-
         .net-amount {
             background: #f0fdf4;
             color: #18804b;
         }
-
 
         /* =========================================================
            REMOVE BUTTON
@@ -256,11 +230,9 @@
             font-size: 13px;
         }
 
-
         .remove-btn:hover {
             background: #b02a37;
         }
-
 
         /* =========================================================
            ADD PRODUCT
@@ -278,11 +250,9 @@
             font-size: 14px;
         }
 
-
         .add-row-btn:hover {
             background: #157347;
         }
-
 
         /* =========================================================
            HELPER TEXT
@@ -294,10 +264,8 @@
             color: #888;
         }
 
-
         /* =========================================================
            SUMMARY
-           FULL WIDTH
            ========================================================= */
 
         .summary {
@@ -306,7 +274,6 @@
             display: flex;
             justify-content: stretch;
         }
-
 
         .summary-box {
             width: 100%;
@@ -317,7 +284,6 @@
             box-sizing: border-box;
         }
 
-
         .summary-row {
             width: 100%;
             display: flex;
@@ -327,28 +293,23 @@
             border-bottom: 1px solid #e5e5e5;
         }
 
-
         .summary-row:last-child {
             border-bottom: none;
         }
-
 
         .summary-label {
             font-weight: 600;
             color: #555;
         }
 
-
         .summary-value {
             font-weight: 700;
             color: #222;
         }
 
-
         .grand-total {
             font-size: 19px;
         }
-
 
         /* =========================================================
            ACTION BUTTONS
@@ -359,8 +320,8 @@
             justify-content: space-between;
             align-items: center;
             margin-top: 20px;
+            gap: 12px;
         }
-
 
         .btn-save {
             padding: 12px 25px;
@@ -373,13 +334,12 @@
             cursor: pointer;
         }
 
-
         .btn-save:hover {
             background: #0b5ed7;
         }
 
-
         .back-btn {
+            display: inline-block;
             padding: 11px 20px;
             border-radius: 6px;
             background: #6c757d;
@@ -388,12 +348,10 @@
             font-weight: 600;
         }
 
-
         .back-btn:hover {
             background: #5c636a;
             color: white;
         }
-
 
         /* =========================================================
            MESSAGE
@@ -405,12 +363,11 @@
             font-weight: 600;
         }
 
-
         /* =========================================================
            RESPONSIVE - 1200px
            ========================================================= */
 
-        @media(max-width: 1200px) {
+        @media (max-width: 1200px) {
 
             .form-row {
                 grid-template-columns: repeat(2, 1fr);
@@ -422,25 +379,22 @@
 
         }
 
-
         /* =========================================================
            RESPONSIVE - 900px
            ========================================================= */
 
-        @media(max-width: 900px) {
+        @media (max-width: 900px) {
 
             .form-row,
             .customer-info {
                 grid-template-columns: 1fr;
             }
 
-
             .action-buttons {
                 flex-direction: column;
                 align-items: stretch;
                 gap: 12px;
             }
-
 
             .back-btn,
             .btn-save {
@@ -451,48 +405,37 @@
 
         }
 
-
         /* =========================================================
            RESPONSIVE - 600px
            ========================================================= */
 
-        @media(max-width: 600px) {
+        @media (max-width: 600px) {
 
             .sell-container {
                 width: 94%;
                 margin: 15px auto;
             }
 
-
             .card {
                 padding: 15px;
             }
-
 
             .page-title {
                 font-size: 24px;
             }
 
-
             .card-title {
                 font-size: 18px;
             }
-
 
             .summary-row {
                 padding: 11px 2px;
             }
 
-
-            .summary-label {
-                font-size: 14px;
-            }
-
-
+            .summary-label,
             .summary-value {
                 font-size: 14px;
             }
-
 
             .grand-total {
                 font-size: 17px;
@@ -500,34 +443,29 @@
 
         }
 
-
         /* =========================================================
            RESPONSIVE - 400px
            ========================================================= */
 
-        @media(max-width: 400px) {
+        @media (max-width: 400px) {
 
             .sell-container {
                 width: 96%;
             }
 
-
             .card {
                 padding: 12px;
             }
 
-
             .page-title {
                 font-size: 22px;
             }
-
 
             .summary-row {
                 flex-direction: column;
                 align-items: flex-start;
                 gap: 5px;
             }
-
 
             .summary-value {
                 align-self: flex-end;
@@ -546,9 +484,7 @@
 
     <div class="sell-container">
 
-        <!-- =====================================================
-             PAGE TITLE
-             ===================================================== -->
+        <!-- PAGE TITLE -->
 
         <div class="page-title">
             New Sale
@@ -565,14 +501,13 @@
                 Sale Information
             </div>
 
-
             <div class="form-row">
 
                 <!-- CUSTOMER -->
 
                 <div class="form-group">
 
-                    <label>
+                    <label for="<%= DropList1.ClientID %>">
                         Customer
                     </label>
 
@@ -597,7 +532,7 @@
 
                 <div class="form-group">
 
-                    <label>
+                    <label for="<%= TextBoxInvoice.ClientID %>">
                         Invoice Number
                     </label>
 
@@ -611,11 +546,11 @@
                 </div>
 
 
-                <!-- DATE -->
+                <!-- SALE DATE -->
 
                 <div class="form-group">
 
-                    <label>
+                    <label for="<%= TextBoxDate.ClientID %>">
                         Sale Date
                     </label>
 
@@ -631,9 +566,7 @@
             </div>
 
 
-            <!-- =================================================
-                 CUSTOMER INFORMATION
-                 ================================================= -->
+            <!-- CUSTOMER INFORMATION -->
 
             <div class="customer-info">
 
@@ -655,7 +588,7 @@
                 </div>
 
 
-                <!-- CONTACT -->
+                <!-- CUSTOMER CONTACT -->
 
                 <div class="info-box">
 
@@ -673,7 +606,7 @@
                 </div>
 
 
-                <!-- ADDRESS -->
+                <!-- CUSTOMER ADDRESS -->
 
                 <div class="info-box">
 
@@ -713,27 +646,16 @@
                     <thead>
 
                         <tr>
-
                             <th>#</th>
-
                             <th>Product</th>
-
                             <th>Brand</th>
-
                             <th>Selling Price</th>
-
                             <th>Quantity</th>
-
                             <th>Gross Amount</th>
-
                             <th>Discount %</th>
-
                             <th>Discount Amount</th>
-
                             <th>Net Amount</th>
-
                             <th>Action</th>
-
                         </tr>
 
                     </thead>
@@ -741,13 +663,11 @@
 
                     <tbody id="saleItemsBody">
 
-                        <!-- =================================================
-                             FIRST SALE ROW
-                             ================================================= -->
+                        <!-- FIRST SALE ROW -->
 
                         <tr class="sale-item-row">
 
-                            <!-- NUMBER -->
+                            <!-- ROW NUMBER -->
 
                             <td class="row-number">
                                 1
@@ -816,14 +736,15 @@
                                     CssClass="item-input qty-input"
                                     TextMode="Number"
                                     min="1"
+                                    step="1"
                                     placeholder="Qty"
-                                    oninput="calculateRow(this);">
+                                    oninput="calculateRow(this); calculateSummary();">
                                 </asp:TextBox>
 
                             </td>
 
 
-                            <!-- GROSS -->
+                            <!-- GROSS AMOUNT -->
 
                             <td>
 
@@ -834,7 +755,7 @@
                             </td>
 
 
-                            <!-- DISCOUNT -->
+                            <!-- DISCOUNT PERCENTAGE -->
 
                             <td>
 
@@ -847,7 +768,7 @@
                                     max="100"
                                     step="0.01"
                                     placeholder="0"
-                                    oninput="calculateRow(this);">
+                                    oninput="calculateRow(this); calculateSummary();">
                                 </asp:TextBox>
 
                             </td>
@@ -864,7 +785,7 @@
                             </td>
 
 
-                            <!-- NET -->
+                            <!-- NET AMOUNT -->
 
                             <td>
 
@@ -875,14 +796,15 @@
                             </td>
 
 
-                            <!-- REMOVE -->
+                            <!-- REMOVE ROW -->
 
                             <td>
 
                                 <button
                                     type="button"
                                     class="remove-btn"
-                                    onclick="removeProductRow(this);">
+                                    onclick="removeProductRow(this);"
+                                    title="Remove product">
 
                                     <i class="fa-solid fa-trash"></i>
 
@@ -899,9 +821,7 @@
             </div>
 
 
-            <!-- =================================================
-                 ADD PRODUCT
-                 ================================================= -->
+            <!-- ADD PRODUCT BUTTON -->
 
             <button
                 type="button"
@@ -917,13 +837,13 @@
             <div class="helper-text">
 
                 Select product → select brand → enter quantity →
-                enter discount → calculate summary → save sale.
+                enter discount → review summary → save sale.
 
             </div>
 
 
             <!-- =================================================
-                 SUMMARY
+                 SALE SUMMARY
                  ================================================= -->
 
             <div class="card-title" style="margin-top:25px;">
@@ -1013,21 +933,17 @@
                 ID="HiddenSaleItems"
                 runat="server" />
 
-
             <asp:HiddenField
                 ID="HiddenProductBrandPrice"
                 runat="server" />
-
 
             <asp:HiddenField
                 ID="HiddenTotalGross"
                 runat="server" />
 
-
             <asp:HiddenField
                 ID="HiddenTotalDiscount"
                 runat="server" />
-
 
             <asp:HiddenField
                 ID="HiddenTotalNet"
@@ -1039,6 +955,8 @@
                  ================================================= -->
 
             <div class="action-buttons">
+
+                <!-- VIEW ALL SALES -->
 
                 <asp:LinkButton
                     ID="LinkButton1"
@@ -1052,17 +970,17 @@
                 </asp:LinkButton>
 
 
+                <!-- SAVE SALE -->
+
                 <asp:Button
                     ID="Button2"
                     runat="server"
-                    Text="Save Sale & Generate Invoice"
+                    Text="Save Sale &amp; Generate Invoice"
                     CssClass="btn-save"
                     CausesValidation="false"
                     UseSubmitBehavior="false"
                     OnClick="Button2_Click"
-                    OnClientClick="return prepareSaleData();">
-
-                </asp:Button>
+                    OnClientClick="return prepareSaleData();" />
 
             </div>
 
@@ -1086,25 +1004,20 @@
 
         function loadBrandPriceData() {
 
-            var hidden =
-                document.getElementById(
-                    '<%= HiddenProductBrandPrice.ClientID %>'
-                );
-
+            var hidden = document.getElementById(
+                '<%= HiddenProductBrandPrice.ClientID %>'
+            );
 
             if (!hidden || !hidden.value) {
 
                 productBrandPrice = {};
 
                 return;
-
             }
-
 
             try {
 
-                productBrandPrice =
-                    JSON.parse(hidden.value);
+                productBrandPrice = JSON.parse(hidden.value);
 
             }
             catch (e) {
@@ -1129,40 +1042,28 @@
 
             loadBrandPriceData();
 
+            var row = productSelect.closest(
+                ".sale-item-row"
+            );
 
-            var row =
-                productSelect.closest(
-                    ".sale-item-row"
-                );
-
-
-            if (!row)
+            if (!row) {
                 return;
+            }
 
+            var brandSelect = row.querySelector(
+                ".brand-select"
+            );
 
-            var brandSelect =
-                row.querySelector(
-                    ".brand-select"
-                );
-
-
-            var priceInput =
-                row.querySelector(
-                    ".price-input"
-                );
-
+            var priceInput = row.querySelector(
+                ".price-input"
+            );
 
             brandSelect.innerHTML =
                 '<option value="">-- Select Brand --</option>';
 
+            priceInput.value = "0.00";
 
-            priceInput.value =
-                "0.00";
-
-
-            var productName =
-                productSelect.value;
-
+            var productName = productSelect.value;
 
             if (!productName) {
 
@@ -1171,63 +1072,46 @@
                 calculateSummary();
 
                 return;
-
             }
 
+            var brands = productBrandPrice[productName];
 
-            var brands =
-                productBrandPrice[productName];
-
-
-            if (!brands ||
-                brands.length === 0) {
+            if (!brands || brands.length === 0) {
 
                 console.log(
-                    "No brand found for " +
-                    productName
+                    "No brand found for " + productName
                 );
+
+                calculateRow(productSelect);
 
                 calculateSummary();
 
                 return;
-
             }
-
 
             brands.forEach(function (item) {
 
-                var option =
-                    document.createElement(
-                        "option"
-                    );
+                var option = document.createElement(
+                    "option"
+                );
 
+                option.value = item.brand;
 
-                option.value =
-                    item.brand;
-
-
-                option.text =
-                    item.brand;
-
+                option.text = item.brand;
 
                 option.setAttribute(
                     "data-product-id",
                     item.productid
                 );
 
-
                 option.setAttribute(
                     "data-price",
                     item.price
                 );
 
-
-                brandSelect.appendChild(
-                    option
-                );
+                brandSelect.appendChild(option);
 
             });
-
 
             calculateRow(productSelect);
 
@@ -1242,57 +1126,42 @@
 
         function brandChanged(brandSelect) {
 
-            var row =
-                brandSelect.closest(
-                    ".sale-item-row"
-                );
+            var row = brandSelect.closest(
+                ".sale-item-row"
+            );
 
+            if (!row) {
+                return;
+            }
 
-            var priceInput =
-                row.querySelector(
-                    ".price-input"
-                );
+            var priceInput = row.querySelector(
+                ".price-input"
+            );
 
-
-            var option =
-                brandSelect.options[
-                    brandSelect.selectedIndex
-                ];
-
+            var option = brandSelect.options[
+                brandSelect.selectedIndex
+            ];
 
             if (!brandSelect.value) {
 
-                priceInput.value =
-                    "0.00";
+                priceInput.value = "0.00";
 
-
-                calculateRow(
-                    brandSelect
-                );
+                calculateRow(brandSelect);
 
                 calculateSummary();
 
                 return;
-
             }
 
-
-            var price =
-                option.getAttribute(
-                    "data-price"
-                );
-
-
-            priceInput.value =
-                parseFloat(
-                    price || 0
-                ).toFixed(2);
-
-
-            calculateRow(
-                brandSelect
+            var price = option.getAttribute(
+                "data-price"
             );
 
+            priceInput.value = parseFloat(
+                price || 0
+            ).toFixed(2);
+
+            calculateRow(brandSelect);
 
             calculateSummary();
 
@@ -1305,79 +1174,61 @@
 
         function calculateRow(element) {
 
-            var row =
-                element.closest(
-                    ".sale-item-row"
-                );
+            var row = element.closest(
+                ".sale-item-row"
+            );
 
-
-            if (!row)
+            if (!row) {
                 return;
+            }
 
+            var quantity = parseFloat(
+                row.querySelector(
+                    ".qty-input"
+                ).value
+            ) || 0;
 
-            var quantity =
-                parseFloat(
-                    row.querySelector(
-                        ".qty-input"
-                    ).value
-                ) || 0;
+            var price = parseFloat(
+                row.querySelector(
+                    ".price-input"
+                ).value
+            ) || 0;
 
+            var discount = parseFloat(
+                row.querySelector(
+                    ".discount-input"
+                ).value
+            ) || 0;
 
-            var price =
-                parseFloat(
-                    row.querySelector(
-                        ".price-input"
-                    ).value
-                ) || 0;
-
-
-            var discount =
-                parseFloat(
-                    row.querySelector(
-                        ".discount-input"
-                    ).value
-                ) || 0;
-
-
-            if (discount < 0)
+            if (discount < 0) {
                 discount = 0;
+            }
 
-
-            if (discount > 100)
+            if (discount > 100) {
                 discount = 100;
+            }
 
-
-            var gross =
-                quantity * price;
-
+            var gross = quantity * price;
 
             var discountAmount =
                 gross * discount / 100;
 
-
-            var net =
-                gross - discountAmount;
-
+            var net = gross - discountAmount;
 
             row.querySelector(
                 ".gross-amount"
             ).innerText =
-                "₹ " +
-                gross.toFixed(2);
-
+                "₹ " + gross.toFixed(2);
 
             row.querySelector(
                 ".discount-amount"
             ).innerText =
-                "₹ " +
-                discountAmount.toFixed(2);
-
+                "₹ " + discountAmount.toFixed(2);
 
             row.querySelector(
                 ".net-amount"
             ).innerText =
-                "₹ " +
-                net.toFixed(2);
+                "₹ " + net.toFixed(2);
 
         }
 
@@ -1388,144 +1239,130 @@
 
         function addProductRow() {
 
-            var tbody =
-                document.getElementById(
-                    "saleItemsBody"
-                );
+            var tbody = document.getElementById(
+                "saleItemsBody"
+            );
 
+            var firstRow = tbody.querySelector(
+                ".sale-item-row"
+            );
 
-            var firstRow =
-                tbody.querySelector(
-                    ".sale-item-row"
-                );
-
-
-            if (!firstRow)
+            if (!firstRow) {
                 return;
+            }
+
+            var newRow = firstRow.cloneNode(true);
+
+            var product = newRow.querySelector(
+                ".product-select"
+            );
+
+            var brand = newRow.querySelector(
+                ".brand-select"
+            );
+
+            var qty = newRow.querySelector(
+                ".qty-input"
+            );
+
+            var price = newRow.querySelector(
+                ".price-input"
+            );
+
+            var discount = newRow.querySelector(
+                ".discount-input"
+            );
 
 
-            var newRow =
-                firstRow.cloneNode(true);
+            /* RESET PRODUCT */
+
+            product.selectedIndex = 0;
 
 
-            var product =
-                newRow.querySelector(
-                    ".product-select"
-                );
-
-
-            var brand =
-                newRow.querySelector(
-                    ".brand-select"
-                );
-
-
-            var qty =
-                newRow.querySelector(
-                    ".qty-input"
-                );
-
-
-            var price =
-                newRow.querySelector(
-                    ".price-input"
-                );
-
-
-            var discount =
-                newRow.querySelector(
-                    ".discount-input"
-                );
-
-
-            product.selectedIndex =
-                0;
-
+            /* RESET BRAND */
 
             brand.innerHTML =
                 '<option value="">-- Select Brand --</option>';
 
 
-            qty.value =
-                "";
+            /* RESET QUANTITY */
+
+            qty.value = "";
 
 
-            price.value =
-                "0.00";
+            /* RESET PRICE */
+
+            price.value = "0.00";
 
 
-            discount.value =
-                "";
+            /* RESET DISCOUNT */
 
+            discount.value = "";
+
+
+            /* RESET CALCULATED AMOUNTS */
 
             newRow.querySelector(
                 ".gross-amount"
-            ).innerText =
-                "₹ 0.00";
-
+            ).innerText = "₹ 0.00";
 
             newRow.querySelector(
                 ".discount-amount"
-            ).innerText =
-                "₹ 0.00";
-
+            ).innerText = "₹ 0.00";
 
             newRow.querySelector(
                 ".net-amount"
-            ).innerText =
-                "₹ 0.00";
+            ).innerText = "₹ 0.00";
 
 
-            product.onchange =
-                function () {
+            /* PRODUCT EVENT */
 
-                    productChanged(
-                        this
-                    );
+            product.onchange = function () {
 
-                };
+                productChanged(this);
 
-
-            brand.onchange =
-                function () {
-
-                    brandChanged(
-                        this
-                    );
-
-                };
+            };
 
 
-            qty.oninput =
-                function () {
+            /* BRAND EVENT */
 
-                    calculateRow(
-                        this
-                    );
+            brand.onchange = function () {
 
-                    calculateSummary();
+                brandChanged(this);
 
-                };
+            };
 
 
-            discount.oninput =
-                function () {
+            /* QUANTITY EVENT */
 
-                    calculateRow(
-                        this
-                    );
+            qty.oninput = function () {
 
-                    calculateSummary();
+                calculateRow(this);
 
-                };
+                calculateSummary();
+
+            };
 
 
-            tbody.appendChild(
-                newRow
-            );
+            /* DISCOUNT EVENT */
+
+            discount.oninput = function () {
+
+                calculateRow(this);
+
+                calculateSummary();
+
+            };
+
+
+            /* ADD ROW */
+
+            tbody.appendChild(newRow);
 
 
             updateRowNumbers();
+
+            calculateSummary();
 
         }
 
@@ -1536,30 +1373,23 @@
 
         function updateRowNumbers() {
 
-            var rows =
-                document.querySelectorAll(
-                    "#saleItemsBody .sale-item-row"
+            var rows = document.querySelectorAll(
+                "#saleItemsBody .sale-item-row"
+            );
+
+            rows.forEach(function (row, index) {
+
+                var number = row.querySelector(
+                    ".row-number"
                 );
 
+                if (number) {
 
-            rows.forEach(
-                function (row, index) {
-
-                    var number =
-                        row.querySelector(
-                            ".row-number"
-                        );
-
-
-                    if (number) {
-
-                        number.innerText =
-                            index + 1;
-
-                    }
+                    number.innerText = index + 1;
 
                 }
-            );
+
+            });
 
         }
 
@@ -1570,17 +1400,13 @@
 
         function removeProductRow(button) {
 
-            var tbody =
-                document.getElementById(
-                    "saleItemsBody"
-                );
+            var tbody = document.getElementById(
+                "saleItemsBody"
+            );
 
-
-            var rows =
-                tbody.querySelectorAll(
-                    ".sale-item-row"
-                );
-
+            var rows = tbody.querySelectorAll(
+                ".sale-item-row"
+            );
 
             if (rows.length <= 1) {
 
@@ -1589,17 +1415,13 @@
                 );
 
                 return;
-
             }
-
 
             button.closest(
                 ".sale-item-row"
             ).remove();
 
-
             updateRowNumbers();
-
 
             calculateSummary();
 
@@ -1612,11 +1434,9 @@
 
         function calculateSummary() {
 
-            var rows =
-                document.querySelectorAll(
-                    "#saleItemsBody .sale-item-row"
-                );
-
+            var rows = document.querySelectorAll(
+                "#saleItemsBody .sale-item-row"
+            );
 
             var totalGross = 0;
 
@@ -1624,338 +1444,298 @@
 
             var totalNet = 0;
 
+            rows.forEach(function (row) {
 
-            rows.forEach(
-                function (row) {
+                var quantity = parseFloat(
+                    row.querySelector(
+                        ".qty-input"
+                    ).value
+                ) || 0;
 
-                    var quantity =
-                        parseFloat(
-                            row.querySelector(
-                                ".qty-input"
-                            ).value
-                        ) || 0;
+                var price = parseFloat(
+                    row.querySelector(
+                        ".price-input"
+                    ).value
+                ) || 0;
 
+                var discount = parseFloat(
+                    row.querySelector(
+                        ".discount-input"
+                    ).value
+                ) || 0;
 
-                    var price =
-                        parseFloat(
-                            row.querySelector(
-                                ".price-input"
-                            ).value
-                        ) || 0;
-
-
-                    var discount =
-                        parseFloat(
-                            row.querySelector(
-                                ".discount-input"
-                            ).value
-                        ) || 0;
-
-
-                    if (discount < 0)
-                        discount = 0;
-
-
-                    if (discount > 100)
-                        discount = 100;
-
-
-                    var gross =
-                        quantity * price;
-
-
-                    var discountAmount =
-                        gross * discount / 100;
-
-
-                    var net =
-                        gross - discountAmount;
-
-
-                    totalGross +=
-                        gross;
-
-
-                    totalDiscount +=
-                        discountAmount;
-
-
-                    totalNet +=
-                        net;
-
+                if (discount < 0) {
+                    discount = 0;
                 }
-            );
 
+                if (discount > 100) {
+                    discount = 100;
+                }
+
+                var gross = quantity * price;
+
+                var discountAmount =
+                    gross * discount / 100;
+
+                var net = gross - discountAmount;
+
+                totalGross += gross;
+
+                totalDiscount += discountAmount;
+
+                totalNet += net;
+
+            });
+
+
+            /* UPDATE VISIBLE SUMMARY */
 
             document.getElementById(
                 '<%= lblTotalGross.ClientID %>'
-            ).innerText =
-                totalGross.toFixed(2);
-
+            ).innerText = totalGross.toFixed(2);
 
             document.getElementById(
                 '<%= lblTotalDiscount.ClientID %>'
-            ).innerText =
-                totalDiscount.toFixed(2);
-
+            ).innerText = totalDiscount.toFixed(2);
 
             document.getElementById(
                 '<%= lblTotalNet.ClientID %>'
-            ).innerText =
-                totalNet.toFixed(2);
+            ).innerText = totalNet.toFixed(2);
 
+
+            /* UPDATE HIDDEN FIELDS */
 
             document.getElementById(
                 '<%= HiddenTotalGross.ClientID %>'
-            ).value =
-                totalGross.toFixed(2);
-
+            ).value = totalGross.toFixed(2);
 
             document.getElementById(
                 '<%= HiddenTotalDiscount.ClientID %>'
-            ).value =
-                totalDiscount.toFixed(2);
-
+            ).value = totalDiscount.toFixed(2);
 
             document.getElementById(
                 '<%= HiddenTotalNet.ClientID %>'
-            ).value =
-                totalNet.toFixed(2);
+            ).value = totalNet.toFixed(2);
+
+}
+
+
+/* =========================================================
+   PREPARE SALE DATA BEFORE POSTBACK
+   ========================================================= */
+
+function prepareSaleData() {
+
+    try {
+
+        var rows = document.querySelectorAll(
+            "#saleItemsBody .sale-item-row"
+        );
+
+        var items = [];
+
+
+        for (var i = 0; i < rows.length; i++) {
+
+            var row = rows[i];
+
+            var productSelect = row.querySelector(
+                ".product-select"
+            );
+
+            var brandSelect = row.querySelector(
+                ".brand-select"
+            );
+
+            var quantityInput = row.querySelector(
+                ".qty-input"
+            );
+
+            var priceInput = row.querySelector(
+                ".price-input"
+            );
+
+            var discountInput = row.querySelector(
+                ".discount-input"
+            );
+
+
+            var productName = (
+                productSelect.value || ""
+            ).trim();
+
+
+            /* IGNORE EMPTY PRODUCT ROWS */
+
+            if (productName === "") {
+                continue;
+            }
+
+
+            /* VALIDATE BRAND */
+
+            var brand = (
+                brandSelect.value || ""
+            ).trim();
+
+            if (brand === "") {
+
+                alert(
+                    "Please select a brand for " +
+                    productName
+                );
+
+                return false;
+
+            }
+
+
+            /* GET PRODUCT ID */
+
+            var selectedOption =
+                brandSelect.options[
+                brandSelect.selectedIndex
+                ];
+
+            var productId =
+                selectedOption.getAttribute(
+                    "data-product-id"
+                );
+
+            if (!productId) {
+
+                alert(
+                    "Product ID not found for " +
+                    productName
+                );
+
+                return false;
+
+            }
+
+
+            /* VALIDATE QUANTITY */
+
+            var quantity = parseFloat(
+                quantityInput.value
+            ) || 0;
+
+            if (
+                !Number.isFinite(quantity) ||
+                quantity <= 0 ||
+                !Number.isInteger(quantity)
+            ) {
+
+                alert(
+                    "Please enter a valid whole-number quantity for " +
+                    productName
+                );
+
+                return false;
+
+            }
+
+
+            /* VALIDATE SELLING PRICE */
+
+            var price = parseFloat(
+                priceInput.value
+            ) || 0;
+
+            if (
+                !Number.isFinite(price) ||
+                price <= 0
+            ) {
+
+                alert(
+                    "Selling price not found for " +
+                    productName
+                );
+
+                return false;
+
+            }
+
+
+            /* VALIDATE DISCOUNT */
+
+            var discountValue =
+                discountInput.value.trim();
+
+            var discount = discountValue === ""
+                ? 0
+                : Number(discountValue);
+
+            if (
+                !Number.isFinite(discount) ||
+                discount < 0 ||
+                discount > 100
+            ) {
+
+                alert(
+                    "Discount must be between 0 and 100."
+                );
+
+                return false;
+
+            }
+
+
+            /* CALCULATE AMOUNTS */
+
+            var gross = quantity * price;
+
+            var discountAmount =
+                gross * discount / 100;
+
+            var net = gross - discountAmount;
+
+
+            /* ADD SALE ITEM */
+
+            items.push({
+
+                productid: productId,
+
+                productname: productName,
+
+                brand: brand,
+
+                quantity: quantity,
+
+                sellingprice: price,
+
+                discountpercent: discount,
+
+                grossamount: gross,
+
+                discountamount: discountAmount,
+
+                netamount: net
+
+            });
 
         }
 
 
-        /* =========================================================
-           PREPARE SALE DATA BEFORE POSTBACK
-           ========================================================= */
+        /* VALIDATE SALE ITEMS */
 
-        function prepareSaleData() {
+        if (items.length === 0) {
 
-            try {
+            alert(
+                "Please select at least one product."
+            );
 
-                var rows =
-                    document.querySelectorAll(
-                        "#saleItemsBody .sale-item-row"
-                    );
+            return false;
 
+        }
 
-                var items = [];
 
+        /* GET HIDDEN FIELD */
 
-                for (
-                    var i = 0;
-                    i < rows.length;
-                    i++
-                ) {
-
-                    var row =
-                        rows[i];
-
-
-                    var productSelect =
-                        row.querySelector(
-                            ".product-select"
-                        );
-
-
-                    var brandSelect =
-                        row.querySelector(
-                            ".brand-select"
-                        );
-
-
-                    var quantityInput =
-                        row.querySelector(
-                            ".qty-input"
-                        );
-
-
-                    var priceInput =
-                        row.querySelector(
-                            ".price-input"
-                        );
-
-
-                    var discountInput =
-                        row.querySelector(
-                            ".discount-input"
-                        );
-
-
-                    var productName =
-                        (
-                            productSelect.value ||
-                            ""
-                        ).trim();
-
-
-                    /* IGNORE EMPTY ROW */
-
-                    if (productName === "")
-                        continue;
-
-
-                    var brand =
-                        (
-                            brandSelect.value ||
-                            ""
-                        ).trim();
-
-
-                    if (brand === "") {
-
-                        alert(
-                            "Please select a brand for " +
-                            productName
-                        );
-
-                        return false;
-
-                    }
-
-
-                    var selectedOption =
-                        brandSelect.options[
-                            brandSelect.selectedIndex
-                        ];
-
-
-                    var productId =
-                        selectedOption.getAttribute(
-                            "data-product-id"
-                        );
-
-
-                    if (!productId) {
-
-                        alert(
-                            "Product ID not found for " +
-                            productName
-                        );
-
-                        return false;
-
-                    }
-
-
-                    var quantity =
-                        parseFloat(
-                            quantityInput.value
-                        ) || 0;
-
-
-                    if (quantity <= 0) {
-
-                        alert(
-                            "Please enter quantity for " +
-                            productName
-                        );
-
-                        return false;
-
-                    }
-
-
-                    var price =
-                        parseFloat(
-                            priceInput.value
-                        ) || 0;
-
-
-                    if (price <= 0) {
-
-                        alert(
-                            "Selling price not found for " +
-                            productName
-                        );
-
-                        return false;
-
-                    }
-
-
-                    var discount =
-                        parseFloat(
-                            discountInput.value
-                        ) || 0;
-
-
-                    if (
-                        discount < 0 ||
-                        discount > 100
-                    ) {
-
-                        alert(
-                            "Discount must be between 0 and 100."
-                        );
-
-                        return false;
-
-                    }
-
-
-                    var gross =
-                        quantity * price;
-
-
-                    var discountAmount =
-                        gross * discount / 100;
-
-
-                    var net =
-                        gross - discountAmount;
-
-
-                    items.push({
-
-                        productid:
-                            productId,
-
-                        productname:
-                            productName,
-
-                        brand:
-                            brand,
-
-                        quantity:
-                            quantity,
-
-                        sellingprice:
-                            price,
-
-                        discountpercent:
-                            discount,
-
-                        grossamount:
-                            gross,
-
-                        discountamount:
-                            discountAmount,
-
-                        netamount:
-                            net
-
-                    });
-
-                }
-
-
-                if (items.length === 0) {
-
-                    alert(
-                        "Please select at least one product."
-                    );
-
-                    return false;
-
-                }
-
-
-                var hiddenField =
-                    document.getElementById(
-                        '<%= HiddenSaleItems.ClientID %>'
-                    );
-
+        var hiddenField = document.getElementById(
+                    '<%= HiddenSaleItems.ClientID %>'
+                );
 
                 if (!hiddenField) {
 
@@ -1968,12 +1748,17 @@
                 }
 
 
-                hiddenField.value =
-                    JSON.stringify(items);
+                /* STORE SALE ITEMS AS JSON */
 
+                hiddenField.value = JSON.stringify(items);
+
+
+                /* UPDATE SUMMARY */
 
                 calculateSummary();
 
+
+                /* ALLOW POSTBACK */
 
                 return true;
 
@@ -1985,11 +1770,7 @@
                     error.message
                 );
 
-
-                console.error(
-                    error
-                );
-
+                console.error(error);
 
                 return false;
 
@@ -2006,31 +1787,35 @@
             "DOMContentLoaded",
             function () {
 
+                /* LOAD PRODUCT / BRAND / PRICE DATA */
+
                 loadBrandPriceData();
 
 
+                /* INITIAL PRODUCT EVENT */
+
                 var productSelect =
                     document.querySelector(
-                        ".product-select"
+                        "#saleItemsBody .product-select"
                     );
-
 
                 if (productSelect) {
 
-                    productSelect.onchange =
-                        function () {
+                    productSelect.onchange = function () {
 
-                            productChanged(
-                                this
-                            );
+                        productChanged(this);
 
-                        };
+                    };
 
                 }
 
 
+                /* INITIALIZE ROW NUMBERS */
+
                 updateRowNumbers();
 
+
+                /* INITIALIZE SUMMARY */
 
                 calculateSummary();
 
